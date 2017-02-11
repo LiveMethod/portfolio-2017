@@ -1,0 +1,163 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title Rick Steele | Product Designer
+    link(rel="stylesheet" href="/styles/main.css")
+    link(rel="icon" type="image/x-icon" href="/img/favicon.ico")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+    script(src="/js/imgix.min.js")
+
+    script.
+      /////////////////////////////////
+      // shrinky header (h/t tom durkin)
+      /////////////////////////////////
+      $(document).on("scroll", function(){
+        if
+          ($(document).scrollTop() > 100){
+          $("nav").addClass("nav--slim");
+        }
+        else
+        {
+          $("nav").removeClass("nav--slim");
+        }
+      });
+
+      /////////////////////////////////
+      // gfycat
+      /////////////////////////////////
+      (function(d, t) {
+          var g = d.createElement(t),
+              s = d.getElementsByTagName(t)[0];
+          g.src = 'http://assets.gfycat.com/js/gfyajax-0.517d.js';
+          s.parentNode.insertBefore(g, s);
+      }(document, 'script'));
+      /////////////////////////////////
+      // imgix :D
+      /////////////////////////////////
+
+      // imgix.fluid() optional parameters 
+      var imgOptions = {
+        fluidClass: 'imgix-fluid',
+        updateOnResizeDown: true,
+        updateOnPinchZoom: true,
+        pixelRounding: 10,
+        autoInsertCSSBestPractices: true,
+        onChangeParamOverride: function(w, h) {
+        
+           /* Override and insert additional imgix parameters*/
+          var dpr = Math.ceil(window.devicePixelRatio*10) /10;
+          return {
+            // "txt": "w:" + w + " h:" +h + " dpr:" + dpr,
+            // "txtalign": "center,bottom",
+            // "txtsize": 20,
+            // "txtfont": "Helvetica%20Neue,bold",
+            // "txtclr": "ffffffff",
+            // "txtpad": 20,
+            // "txtfit": 'max',
+            // "exp": -5,
+            "h": 'auto'
+          };
+        }
+      };
+      imgix.onready(function() {
+        imgix.fluid(imgOptions);
+      });
+
+    //- crazyegg
+    script.
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName("script")[0];
+      a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0051/2584.js?"+Math.floor(new Date().getTime()/3600000);
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+
+    //- google analytics
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-8303297-1', 'auto');
+      ga('send', 'pageview');
+
+    //- mixpanel
+    script.
+      (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+      mixpanel.init("91da4d5d35327efc12b2fbf2560a2a9e");
+
+  body
+    block nav
+      block link
+        -var selected = 'index'; // default
+
+      //- Jade only compiles one-line JS. kek.
+      -var a = {title: 'Rick Steele', subtitle: 'Product Designer', slug: 'index'};
+      -var b = {title: 'Karmic',      subtitle: 'Biz Spending',     slug: 'karmic'};
+      -var c = {title: 'Orchid',      subtitle: 'Transaction Viz',  slug: 'orchid'};
+      -var d = {title: 'Palace',      subtitle: 'Home Automation',  slug: 'palace'};
+      -var e = {title: 'Animatik',    subtitle: 'Image Editing',    slug: 'animatik'};
+      -var f = {title: 'SushiPro',    subtitle: 'Sushi Recipes',    slug: 'sushipro'};
+      -var menu = [a,b,c,d,e/*,f*/];
+
+      nav(class='nav--' + selected)
+        each entry in menu
+          if selected === entry.slug
+            a.nav__entry.nav__entry--active(href='/' + entry.slug + '.html')
+              h3.nav__title #{entry.title}
+              h5.nav__subtitle #{entry.subtitle}
+          else
+            a.nav__entry.nav__entry(href='/' + entry.slug + '.html')
+              h3.nav__title #{entry.title}
+              h5.nav__subtitle #{entry.subtitle}
+    block body
+
+    block footer
+        -var selectedIndex = -1;
+        each entry in menu
+          if selected === entry.slug && selected !== 'index'
+            //- store the index of the current page
+            -var selectedIndex = menu.indexOf(entry);
+            
+            //- prepare objects for prev and next projects
+            if selectedIndex-1 >= 0
+              -var prev = menu[selectedIndex-1];
+            else
+              //- this isn't a real use case because there's no footer on the homepage
+              -var prev = menu[0];
+
+            if selectedIndex+1 <= menu.length-1
+              -var next = menu[selectedIndex+1];
+            else
+              //- wrap around to the next non-homepage(0) project
+              -var next = menu[1];
+
+            footer(class='nav--' + selected)
+              a.nav__entry.col-sm-6(href='/' + prev.slug + '.html')
+                h5.nav__supertitle Previous Project:
+                h3.nav__title #{prev.title}
+                h5.nav__subtitle #{prev.subtitle}
+
+              .contact.text-center.col-sm-12
+                p Hey! I'm currently taking on freelance work. I'd love to talk to you.  
+                //- a.btn.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
+                //-   | Download My Resume
+
+                a.btn.intro-quote__btn(href="mailto:Rick@LiveMethodDesign.com")
+                  | Rick@LiveMethodDesign.com
+
+              a.text-right.nav__entry.col-sm-6(href='/' + next.slug + '.html')
+                h5.nav__supertitle Next Project:
+                h3.nav__title #{next.title}
+                h5.nav__subtitle #{next.subtitle}
+          else
+            footer(class='nav--' + selected)
+              .contact.text-center.col-xs-24
+                p Hey! I'm currently taking on freelance work. I'd love to talk to you. 
+                //- a.btn.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
+                //-   | Download My Resume
+
+                a.btn.intro-quote__btn(href="mailto:Rick@LiveMethodDesign.com")
+                  | Rick@LiveMethodDesign.com

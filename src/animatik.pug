@@ -1,0 +1,131 @@
+extends ./_layout.pug
+
+append nav
+  block link
+    -var selected = 'animatik';
+
+block body
+  .container-fluid
+    .row.panel.panel--animatik-red
+      img.col-xs-16.col-xs-offset-4(src="/img/animatik/Animatik_Logotype_02.png?w=1200", width="100%", style="padding: 100px 0;")
+
+    .row
+      .default-text
+        h2 The Premise
+
+        p SocialForm approached me to do a complete overhaul of Splatt, their existing photo enhancement suite, which was completely web-based at the time.
+
+        p Splatt let users modify their photos with filters and illustrated overlays. The goal was to take instagram’s image editing suite a few steps further, with animated filters, props, and text features, accessible via in-app purchases.
+
+        p This project took place in the days of iOS6, before this idea caught on hugely with snapchat, so while it feels a little derivitave today, much of this was novel at the time.
+
+        hr
+
+        h2 User Flows
+
+        p I started the project by tightly defining the scope of the new application,  which was a fairly standard profile-based social media app with an attached store and image-editing modal.
+    
+    .row.panel.panel--animatik-white
+        img.col-xs-24.col-xs-offset-0.col-md-22.col-md-offset-1.col-lg-20.col-lg-offset-2(src="/img/animatik/Animatik_UserFlow_02.png?w=1200")
+
+    .row
+      .default-text
+        h2 Wireframes
+
+        p With a flowchart of every screen of in the app, I set out mocking the whole thing up. The most time was spent working on the editor, which in addition to being the core feature is also the most original / least able to rely on existing mobile app layout patterns.
+
+    .panel.panel--animatik-white
+      .row
+        img.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3.col-md-10.col-md-offset-2(src="/img/animatik/Animatik_Wires_01.png?w=600", width="100%", style="margin-bottom: 20px")
+        img.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3.col-md-10.col-md-offset-0(src="/img/animatik/Animatik_Wires_02.png?w=600", width="100%", style="margin-bottom: 20px")
+      .row
+        img.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3.col-md-10.col-md-offset-2(src="/img/animatik/Animatik_Wires_03.png?w=600", width="100%", style="margin-bottom: 20px")
+        img.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3.col-md-10.col-md-offset-0(src="/img/animatik/Animatik_Wires_04.png?w=600", width="100%", style="margin-bottom: 20px")
+      .row
+        img.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3.col-md-10.col-md-offset-2(src="/img/animatik/Animatik_Wires_05.png?w=600", width="100%", style="margin-bottom: 20px")
+        img.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3.col-md-10.col-md-offset-0(src="/img/animatik/Animatik_Wires_06.png?w=600", width="100%", style="margin-bottom: 20px")
+      .row
+        img.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3.col-md-10.col-md-offset-2(src="/img/animatik/Animatik_Wires_07.png?w=600", width="100%", style="margin-bottom: 20px")
+        img.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3.col-md-10.col-md-offset-0(src="/img/animatik/Animatik_Wires_08.png?w=600", width="100%", style="margin-bottom: 20px")
+
+
+     
+      .visible-md.visible-lg.row.shadow(style="background: -webkit-linear-gradient(top left, #ffffff, #ffffff 50%, #FF5137 50%, #DC0000); margin: 140px 80px 0")
+        .col-xs-18.col-xs-offset-3.col-sm-16.col-sm-offset-4.col-md-10.col-md-offset-1.col-lg-7.col-lg-offset-2.md-vertical-center(style="padding: 80px 0;")
+          h4(style="color: #FF3F00; margin-bottom: 0;") Concept Graveyard
+          h2(style="color: #173A4A; margin-top: 0;") Alternate Theme
+
+          p With wires done, it was requested that I make two different style passes, dark and light. This was V1, and the client went for the light look right away.
+
+          p
+            small Note: These icons are all stand-ins to show style. Custom icons are detailed below.
+        .col-xs-18.col-xs-offset-3.col-sm-16.col-sm-offset-4.col-md-12.col-md-offset-1.col-lg-offset-2
+          img(src="/img/animatik/Animatik_Both_Colors_01.png?w=800", style="width: 100%;")
+
+    .visible-xs.visible-sm.row
+      .default-text
+        h4(style="color: #FF3F00; margin-bottom: 0;") Concept Graveyard
+        h2(style="color: #173A4A; margin-top: 0;") Alternate Theme
+
+        p With wires done, it was requested that I make two different style passes, dark and light. This was V1, and the client went for the light look right away.
+
+        p
+          small Note: These icons are all stand-ins to show style. Custom icons are detailed below.
+    .visible-xs.visible-sm.row(style="background: -webkit-linear-gradient(top left, #ffffff, #ffffff 50%, #FF5137 50%, #DC0000);")
+      img(src="/img/animatik/Animatik_Both_Colors_01.png?w=800", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Visual Design and UI Kit
+
+        p The Animatik team was working with a 3rd party development team, and had me deliver a UI kit with all of the app assets, along with some general style screens, rather than have every screen mocked up separately.
+
+    .row.panel.panel--animatik-red
+      img.col-xs-24.col-xs-offset-0.col-md-22.col-md-offset-1.col-lg-20.col-lg-offset-2(src="/img/animatik/Animatik_Screens_01.png?w=1200")
+
+    //- .panel
+    //-   .row
+    //-     .default-text
+    //-       h2 Animated Prototypes
+
+    //-       p Here are a few mockups showing how browsing, adding, and manipulating props work.
+    //-   .row
+    //-     .col-xs-8.col-xs-offset-3.col-md-6.col-md-offset-5
+    //-       img.gfyitem(data-id="GreenEmotionalFlickertailsquirrel", data-controls="false", data-dot="false")
+    //-     .col-xs-8.col-xs-offset-2.col-md-6.col-md-offset-2
+    //-       img.gfyitem(data-id="BlondShadowyGrackle", data-controls="false", data-dot="false")
+
+    //- hr
+
+    .row
+      .default-text
+        h2 Custom Icon Set
+
+        p Animatik's mix of stickers, filters, and graphic text made it difficult to find an existing icon set that felt cohesive while still including icons that described the app's odd medly of features.
+
+        p At the same time, the total number of icons was relatively small, so a custom set was reasonable and in-budget.
+
+        p Strong information architexture early on is what made this set possible. Every user interaction was mapped out and described in detail before any icons had to be created, allowing me to have a feel for the overall vibe of the interaction set from the start, and avoiding any unpleasant and hard-to-integrate surprise additions down the road.
+
+    .row.panel.panel--checker
+      img.col-xs-16.col-xs-offset-4(src="/img/animatik/Animatik_Icon_Set_02.png?w=1200", width="100%")
+
+    .panel
+      .row
+        img.col-xs-6.col-xs-offset-2.col-md-4.col-md-offset-4(src="/img/animatik/Animatik_Icon_Sketch_01.jpg?w=400", width="100%")
+        img.col-xs-6.col-xs-offset-1.col-md-4.col-md-offset-2(src="/img/animatik/Animatik_Icon_Sketch_02.jpg?w=400", width="100%")
+        img.col-xs-6.col-xs-offset-1.col-md-4.col-md-offset-2(src="/img/animatik/Animatik_Icon_Sketch_03.jpg?w=400", width="100%")
+      .row(style="margin-top:80px;")
+        img.col-xs-6.col-xs-offset-2.col-md-4.col-md-offset-4(src="/img/animatik/Animatik_Icon_Sketch_04.jpg?w=400", width="100%")
+        img.col-xs-6.col-xs-offset-1.col-md-4.col-md-offset-2(src="/img/animatik/Animatik_Icon_Sketch_05.jpg?w=400", width="100%")
+        img.col-xs-6.col-xs-offset-1.col-md-4.col-md-offset-2(src="/img/animatik/Animatik_Icon_Sketch_06.jpg?w=400", width="100%")
+    
+    .row.panel.panel--checker
+      img.col-xs-9.col-xs-offset-2.col-md-7.col-md-offset-4(src="/img/animatik/Animatik_Icon_01.png?w=500", width="100%")
+      img.col-xs-9.col-xs-offset-2.col-md-7.col-md-offset-2(src="/img/animatik/Animatik_Icon_02.png?w=500", width="100%")
+
+    .row.panel
+      img.col-xs-16.col-xs-offset-4(src="/img/animatik/animatik-logo-sketch-2.jpg?w=1200", width="100%", style="padding: 100px 0;")
+
+    .row.panel.panel--animatik-red
+      img.col-xs-16.col-xs-offset-4(src="/img/animatik/Animatik_Logotype_02.png?w=1200", width="100%", style="padding: 100px 0;")

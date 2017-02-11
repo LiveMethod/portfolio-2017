@@ -1,0 +1,112 @@
+//====================
+// Home Page - Intro Quote
+//====================
+
+.intro-quote{
+  background-color: @home-background;
+  padding: 100px 0;
+  @media (min-width: @screen-sm ){
+    padding: 200px 0;
+  }
+  
+  h2{
+    font-weight: 500;
+    color: #87A3B7;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+    
+
+    @media (min-width: @screen-sm ){  
+      font-size: 40px;
+      line-height: 50px;
+      text-align: left;
+    }
+
+    em{
+      color: white;
+      font-style: normal;
+    }
+    a{
+      color: @cyan;
+      text-decoration: underline;
+
+      &:hover{
+        font-weight:bold;
+      }
+    }
+  }
+
+  &__btn{
+    margin-top:20px;
+    border-radius: 30px;
+    margin-right: 20px;
+    // border: 1px solid #87A3B7;
+    background-color: @cyan;
+    color: #fff;
+
+    &:hover{
+      background-color: @home-background;
+      border-color: @cyan;
+      color: @cyan;
+    }
+  }
+}
+
+//====================
+// Home Page - Big Project Links
+//====================
+
+.project-hero{
+  width: 100%;
+  background-color: @home-background;
+  display: block;
+  position: relative;
+
+  h1{
+    display: block;
+    position: absolute;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight:900;
+    font-style: italic;
+    font-size: 70px;
+    top: 20%;
+    opacity: 0;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+
+    @media (min-width: @screen-sm){
+      font-size: 140px;
+      top: 25%;
+    }
+    @media (min-width: @screen-md){
+      font-size: 160px;
+      top: 35%;
+    }
+    @media (min-width: @screen-lg){
+      font-size: 200px;
+      top: 40%;
+    }
+  }
+
+  img{
+    width: 100%;
+  }
+
+  &:hover{
+
+    h1{
+      opacity: 1;
+      background-color: rgba(0,0,0,0.7);
+      padding: 0.15em;
+      line-height: 0.5em;
+    }
+    img{
+      // opacity: 0.2;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+extends ./_layout.pug
+
+append nav
+  block link
+    -var selected = 'palace';
+
+block body
+  .container-fluid
+    .row.panel.panel--palace-street
+      img.col-xs-16.col-xs-offset-4.col-sm-10.col-sm-offset-7.col-md-6.col-md-offset-9(src="/img/palace/Palace_Logotype_01.png?w=700", style="margin-top: 60px; margin-bottom: 60px;")
+
+    .row
+      .default-text
+        h2 The Premise
+
+        p Palace is an extensible front end for IoT connected devices. The original prototype used a node JS server connected to <a href="http://dweet.io">dweet.io</a>. The current version uses the new <a href="http://particle.io">particle.io</a> boards, since they do away with the need to run your own server, and can both direct the microcontrollers and track the state of the boards via API.
+
+    .row
+      .col-xs-24
+          img.gfyitem(data-id="ScratchyDistantAuklet", data-controls="false", data-dot="false")
+
+    .row
+      .default-text
+        h2 Early Sketches
+
+        p The original sketches for this app explored number of ways to sort and activate internet connected objects, including sorting them by type and using a 3D representation of the room.
+
+        p Ultimately, the simplest option won.
+
+    .row
+      .col-md-12.col-md-offset-6.shadow
+        img(src="/img/palace/Palace_IG_Sketch.jpg?w=700", style="width: 100%; border: 12px solid white")
+  
+
+
+    .row
+      .default-text
+        h2 UI Iteration
+
+        p Because the app is so simple, I skipped wireframes and went directly to mocking up the app. The blurred background was originally just there to look pretty, but as the mockups evolved the photo became a part of the interface, with the room photo darkening to signify that the light was off. This effect was easy to do in-browser with <a href="https://docs.imgix.com/apis/url/adjustment/exp">imgix's exposure filter</a>
+
+    .row.panel.panel--palace-street
+      .col-xs-24.col-xs-offset-0.col-sm-23.col-sm-offset-1
+        img.col-xs-10.col-xs-offset-1.col-sm-5.col-sm-offset-0(src="/img/palace/Palace_UI_Iteration_Single_01.png?w=500")
+        img.col-xs-10.col-xs-offset-1.col-sm-5.col-sm-offset-1(src="/img/palace/Palace_UI_Iteration_Single_02.png?w=500")
+        img.col-xs-10.col-xs-offset-1.col-sm-5.col-sm-offset-1(src="/img/palace/Palace_UI_Iteration_Single_03.png?w=500")
+        img.col-xs-10.col-xs-offset-1.col-sm-5.col-sm-offset-1(src="/img/palace/Palace_UI_Iteration_Single_04.png?w=500")

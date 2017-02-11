@@ -1,0 +1,63 @@
+//====================
+// Utility Classess
+//====================
+
+.shadow {
+  box-shadow: 0px 4px 30px 0px rgba(5,54,112,0.25);
+}
+
+.xs-vertical-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sm-vertical-center{
+  @media (min-width: @screen-sm){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.md-vertical-center{
+  @media (min-width: @screen-md){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.lg-vertical-center{
+  @media (min-width: @screen-lg){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+
+.xs-vertical-fill{
+  @media (min-width: @screen-xs){
+    display: flex;
+  }
+}
+
+.sm-vertical-fill{
+  @media (min-width: @screen-sm){
+    display: flex;
+  }
+}
+
+.md-vertical-fill{
+  @media (min-width: @screen-md){
+    display: flex;
+  }
+}
+
+.lg-vertical-fill{
+  @media (min-width: @screen-lg){
+    display: flex;
+  }
+}

@@ -1,0 +1,74 @@
+//====================
+// Type
+//====================
+
+html, body{
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+h1, .h1{
+  color: @heading-text;
+  font-weight: @heading-weight;
+  // default (mobile/xs) size
+  font-size: 60px;
+  line-height: 64px;
+  // SM and larger size
+  @media (min-width: @screen-sm){
+    font-size: 96px;
+    line-height: 105px;
+  }
+}
+
+h2, .h2{
+  color: @heading-text;
+  font-weight: @heading-weight;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h3, .h3{
+  color: @heading-text;
+  font-weight: @heading-weight;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h4, .h4{
+  color: @heading-text;
+  font-weight: @heading-weight;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+p, ol, ul{
+  color: @body-text;
+  font-weight: 400;
+
+  // mobile default
+  font-size: 18px;
+  line-height: 26px;
+
+  @media (min-width: @screen-sm){
+    font-size: 21px;
+    line-height: 28px;
+  }
+}
+
+hr {
+  // fixme: pull these out into vars
+  border-top: 2px solid #DCE2E4;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  // margin is larger on non-mobile
+  @media (min-width: @screen-sm){
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+.handwriting {
+  font-family: ladylike;
+  font-weight: 100;
+}
