@@ -32,7 +32,7 @@ dev: build
 
 prod: build
 # move the built site to where the server expects it to be
-	cp -a ./dist /srv/www/dist/
+	cp -r ./dist /srv/www/
 
 
 # Build everything and replace image locations with CDN version
