@@ -31,6 +31,6 @@ dev: build
 		python -m SimpleHTTPServer 8080
 
 # Build everything and replace image locations with CDN version
-prod: build
+imgix: build
 	cd ./dist; \
 		perl -pi -w -e 's,/img/,http://rick.imgix.net/,g;' *.html

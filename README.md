@@ -1,4 +1,4 @@
-# portfolio-2016
+# portfolio-2017
 
 This project requires pug-cli (formerly jade) to build, and harp to run the dev server.
 
@@ -14,8 +14,10 @@ sudo npm install -g harp
 ## Delete static files
 `make clean`
 
-## Build everything and serve it locally
+## Build everything and serve it locally at :8080
 `make dev`
 
-## Build everything and replace image locations with CDN version
-`make prod`
+*Deprecated:*
+
+## Build everything and substitute images for imgix CDN version
+`make imgix`

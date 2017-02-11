@@ -20,5 +20,5 @@ node_modules
 # Generated code
 dist
 
-# Assets (which are in dropbox and would otherwise 200x push/pull
-assets)
+# Assets (which are in dropbox and would otherwise 200x push/pull)
+assets
