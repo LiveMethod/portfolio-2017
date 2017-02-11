@@ -30,6 +30,11 @@ dev: build
 	cd ./dist; \
 		python -m SimpleHTTPServer 8080
 
+prod: build
+# move the built site to where the server expects it to be
+	cp -a ./dist /srv/www/dist/
+
+
 # Build everything and replace image locations with CDN version
 imgix: build
 	cd ./dist; \
