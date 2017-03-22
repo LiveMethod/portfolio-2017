@@ -30,7 +30,7 @@ dev: build
 	cd ./dist; \
 		python -m SimpleHTTPServer 8080
 
-prod: build
+digitalocean:
 # move the built site to where the server expects it to be
 	cp -r ./dist /srv/www/
 
@@ -38,4 +38,4 @@ prod: build
 # Build everything and replace image locations with CDN version
 imgix: build
 	cd ./dist; \
-		perl -pi -w -e 's,/img/,http://rick.imgix.net/,g;' *.html
+		perl -pi -w -e 's,/img/,http://livemethod.imgix.net/,g;' *.html
