@@ -7,7 +7,6 @@ html
     link(rel="icon" type="image/x-icon" href="/img/favicon.ico")
 
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
-    script(src="/js/imgix.min.js")
 
     script.
       /////////////////////////////////
@@ -33,44 +32,6 @@ html
           g.src = 'http://assets.gfycat.com/js/gfyajax-0.517d.js';
           s.parentNode.insertBefore(g, s);
       }(document, 'script'));
-      /////////////////////////////////
-      // imgix :D
-      /////////////////////////////////
-
-      // imgix.fluid() optional parameters 
-      var imgOptions = {
-        fluidClass: 'imgix-fluid',
-        updateOnResizeDown: true,
-        updateOnPinchZoom: true,
-        pixelRounding: 10,
-        autoInsertCSSBestPractices: true,
-        onChangeParamOverride: function(w, h) {
-        
-           /* Override and insert additional imgix parameters*/
-          var dpr = Math.ceil(window.devicePixelRatio*10) /10;
-          return {
-            // "txt": "w:" + w + " h:" +h + " dpr:" + dpr,
-            // "txtalign": "center,bottom",
-            // "txtsize": 20,
-            // "txtfont": "Helvetica%20Neue,bold",
-            // "txtclr": "ffffffff",
-            // "txtpad": 20,
-            // "txtfit": 'max',
-            // "exp": -5,
-            "h": 'auto'
-          };
-        }
-      };
-      imgix.onready(function() {
-        imgix.fluid(imgOptions);
-      });
-
-    //- crazyegg
-    script.
-      setTimeout(function(){var a=document.createElement("script");
-      var b=document.getElementsByTagName("script")[0];
-      a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0051/2584.js?"+Math.floor(new Date().getTime()/3600000);
-      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
     //- google analytics
     script.
