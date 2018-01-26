@@ -24,6 +24,7 @@
 @heading-text: #173A4A; //#091520;
 @heading-weight: 700;
 @body-text: #6A8693;
+@strong-text: #427186;
 
 @footer-height: 120px;
 
@@ -213,6 +214,65 @@
     background: #1e1e1e url(/img/palace/compressed/Palace_Street_BG.jpg) center center no-repeat; 
     background-size: cover;
   }
+
+  &--remitly-intro{
+    background: url(/img/remitly/remitly-hero-bg.jpg) center center no-repeat; 
+    background-size: cover;
+  }
+
+  &--remitly-pale{
+    background-color: #f3f4f7;
+  }
+
+  &--remitly-new-patterns{
+    padding-top: 0;
+    background: -moz-linear-gradient(top, #f3f4f7 0%, #f3f4f7 50%, #ffffff 50%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f3f4f7 0%, #f3f4f7 50%,#ffffff 50%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f3f4f7 0%, #f3f4f7 50%,#ffffff 50%,#ffffff 100%);
+
+    hr {
+      margin-top: 0;
+    }
+    img {
+      padding: 60px 0;
+    }
+    .default-text {
+      padding: 0;
+    }
+  }
+
+  &--remitly-gradient{
+    background: -moz-linear-gradient(45deg, #2a5ea5 0%, #74afff 100%);
+    background: -webkit-linear-gradient(45deg, #2a5ea5 0%,#74afff 100%);
+    background: linear-gradient(45deg, #2a5ea5 0%,#74afff 100%);
+
+    @media (min-width: @screen-md ){
+      padding: 80px 0;
+    }
+  }
+
+}
+
+.card{
+  background-color: white;
+  padding: 80px;
+  overflow: hidden;
+
+  @media (max-width: @screen-md ){
+    padding: 40px;
+  }
+
+  @media (max-width: @screen-sm ){
+    padding: 20px;
+  }
+
+  &--m-b{
+    margin-bottom: 80px;
+
+    @media (max-width: @screen-md ){
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .orchid-bullets{
@@ -242,6 +302,11 @@
     }
   }
 }
+
+.remitly-new-pattern-desc {
+  padding-top: 160px;
+}
+
 
 // animations
 video, .gfyitem, .gfyitem>div{

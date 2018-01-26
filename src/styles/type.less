@@ -68,7 +68,27 @@ hr {
   }
 }
 
+b,
+strong {
+  color: @strong-text;
+}
+
 .handwriting {
   font-family: ladylike;
   font-weight: 100;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.fine-print {
+  &, & p {
+    font-size: 16px;
+    line-height: 1.4em;
+  }
 }

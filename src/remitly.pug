@@ -1,0 +1,288 @@
+extends ./_layout.pug
+
+append nav
+  block link
+    -var selected = 'remitly';
+
+block body
+  .container-fluid
+    .row.panel.panel--remitly-intro
+      .default-text
+        h1.text-center The Remitly pattern library
+        //- p.text-center Creating a flexible but consistent cross-platform experience
+
+
+    .row
+      .default-text
+        h2 Premise
+
+        p As Remitly scaled its money sending operations from 3 countries to roughly a dozen, managing location-specific implementations became costly. Engineering made the decision to replace the front end with something more maintainable, which was the right opportunity to also overhaul a UI that hadn’t gotten much love in the past
+
+        p This pattern library helped us keep a consistent execution across multiple corridors with customized experiences based on cultural and regulatory expectations, while also serving as a platform for quickly testing variations on the product.
+
+
+    //- Existing brand widget
+    .panel.panel--remitly-pale
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow(style="background-color:white; padding: 80px 0; overflow: hidden;")
+          .col-xs-18.col-xs-offset-3.col-lg-7.col-lg-offset-2.md-vertical-center(style="padding-bottom: 20px;")
+            h4(style="color: #FF3F00; margin-bottom: 0;") Context
+            h2(style="color: #173A4A; margin-top: 0;") Existing brand
+            
+            p The first pass at a mobile version of this app adhered closely to 
+              a(href="http://www.weareairlift.com/case-study/remitly") the existing print guidlines
+              | - dark backgrounds, and white text on bright reds and greens. However, it wasn’t long until the glaring UX implications led us to develop an alternate theme that would incorporate form design best practices - especially around error handling, while still feeling on-brand.
+          .col-xs-18.col-xs-offset-3.col-lg-11.col-lg-offset-2
+            img(src="/img/remitly/remitly_existing_brand_simple.png", style="width: 100%;")
+
+    .row
+      .default-text
+        h1.text-center A living style guide from the ground up.
+    .row
+      .default-text(style="padding-top: 0;")
+        h2 Color
+
+        p The UI environment is demanding of colors that are less welcome in marketing materials. Yellows become browns for contrast and readability purposes. Hover states mean additional shaded / tinted versions of things. The product design color palette took the original marketing palette and filled in the gaps for performance in a broader set of environments.
+
+    //- Desktop version
+    .hidden-xs.panel.panel--remitly-pale
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card
+          img(src="/img/remitly/remitly_palette.png", style="width: 100%;")
+
+    //- Mobile version
+    .visible-xs.panel.panel--remitly-pale
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card
+          img(src="/img/remitly/remitly_palette.png", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Spacing
+
+        p On our search for elegant ways to scale spacing units across a design system, we came across this great article about their success with an exponential scale. It felt like a great start, though we ended up missing some intermediate sizes and adding them in.
+
+    //- Desktop version
+    .hidden-xs.panel.panel--remitly-pale
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card
+          img(src="/img/remitly/remitly_spacing.png", style="width: 100%;")
+
+    //- Mobile version
+    .visible-xs.panel.panel--remitly-pale
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card
+          img(src="/img/remitly/remitly_spacing.png", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Typography
+
+        p The goal of the type stack was to have a top end that was bold enough for marketing heros, and a bottom end that was robust enough for legal documents with multiple levels of headings. We borrowed an abstraction from bootstrap and extended the headings with two Display sizes that enhanced the h1 while keeping the h1s themselves at a sane size.
+
+    //- Desktop version
+    .hidden-xs.hidden-sm.panel.panel--remitly-pale
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card
+          img(src="/img/remitly/remitly_type.jpg", style="width: 100%;")
+
+    //- Tablet version
+    .visible-sm.panel.panel--remitly-pale
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card
+          img(src="/img/remitly/remitly_type_mobile.jpg", style="width: 100%;")
+
+    //- Mobile version
+    .visible-xs.panel.panel--remitly-pale
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card
+          img(src="/img/remitly/remitly_type_mobile.jpg", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Basic UI components
+
+        p With the core tokens of the design system in place, generalized buttons and form elements were the next step.
+
+
+    //- Desktop version
+    .hidden-xs.panel.panel--remitly-pale
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card.card--m-b
+            img(src="/img/remitly/remitly_buttons.png", style="width: 100%;")
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card.card--m-b
+            .col-xs-14.col-xs-offset-5
+              img(src="/img/remitly/remitly_toggles.png", style="width: 100%;")
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card.card--m-b
+              img(src="/img/remitly/remitly_form_alerts.png", style="width: 100%;")
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card
+              img(src="/img/remitly/remitly_system_alerts.png", style="width: 100%;")
+
+    //- Mobile version
+    .visible-xs.panel.panel--remitly-pale
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
+          img(src="/img/remitly/remitly_buttons.png", style="width: 100%;")
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
+          .col-xs-14.col-xs-offset-5
+            img(src="/img/remitly/remitly_toggles.png", style="width: 100%;")
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
+            img(src="/img/remitly/remitly_form_alerts.png", style="width: 100%;")
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card
+            img(src="/img/remitly/remitly_system_alerts.png", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Form best practices
+
+        p The combination of complex forms and less technical customers gives input design a higher-than-average importance. We adapted best practices from Neilsen , with a framework that supported a wide variety of labels, placeholders, informational text, and alarts.
+
+    //- desktop version
+    .hidden-xs.panel.panel--remitly-pale
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card.card--m-b
+            img(src="/img/remitly/remitly_inputs.png", style="width: 100%;")
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card.card--m-b
+            img(src="/img/remitly/remitly_grouped_inputs.png", style="width: 100%;")
+
+    //- mobile version
+    .visible-xs.panel.panel--remitly-pale
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
+          img(src="/img/remitly/remitly_inputs.png", style="width: 100%;")
+      .row
+        .col-xs-22.col-xs-offset-1.shadow.card
+          img(src="/img/remitly/remitly_grouped_inputs.png", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Empty states and file uploads
+
+        p Onboarding is a difficult but critical step for financial applications. A multitiude of empty states helped users familiarize themselves with the UI before the system was populated with their information. Some states are purely informational, and some have calls to action at various levels of intensity.
+
+    .panel.panel--remitly-pale
+      .row
+        .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card
+            img(src="/img/remitly/remitly_empty_states.png", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Tiered error states
+
+        p When things go wrong, it’s important to be clear about where. Multiple patterns give the option to couple an error tightly with a piece of UI, or message it more generally.
+
+    .panel.panel--remitly-pale
+      .hidden-xs.hidden-sm.row(style="display:flex; flex-direction: row; padding: 0 60px")
+        .col-xs-6.col-xs-offset-0(style="display: flex; flex: 1 100%; flex-direction: column")
+          img.shadow(src="/img/remitly/remitly_error_field.png", style="width: 100%;")
+          div(style="padding-top: 20px")  
+            h3 Field level
+            p When a problem is scoped to a single UI element.
+
+        .col-xs-6.col-xs-offset-1(style="display: flex; flex: 1 100%; flex-direction: column")
+          img.shadow(src="/img/remitly/remitly_error_form.png", style="width: 100%;")
+          div(style="padding-top: 20px")  
+            h3 Form level
+            p Errors on a single part of the page, but not tied to a single UI element.
+
+        .col-xs-6.col-xs-offset-1(style="display: flex; flex: 1 100%; flex-direction: column")
+          img.shadow(src="/img/remitly/remitly_error_system.png", style="width: 100%;")
+          div(style="padding-top: 20px")  
+            h3 System level
+            p Errors above the page level, like a vendor outage or local connectivity issue.
+
+      .hidden-md.hidden-lg.row
+        .shadow.col-xs-18.col-xs-offset-3(style="background: white; margin-bottom: 40px;")
+          img(src="/img/remitly/remitly_error_field.png", style="width: 100%;")
+          div(style="padding: 0 20px 20px;")
+            h3 Field level
+            p When a problem is scoped to a single UI element.
+
+        .shadow.col-xs-18.col-xs-offset-3(style="background: white; margin-bottom: 40px;")
+          img(src="/img/remitly/remitly_error_form.png", style="width: 100%;")
+          div(style="padding: 0 20px 20px;")
+            h3 Form level
+            p Errors on a single part of the page, but not tied to a single UI element.
+
+        .shadow.col-xs-18.col-xs-offset-3(style="background: white;")
+          img(src="/img/remitly/remitly_error_system.png", style="width: 100%;")
+          div(style="padding: 0 20px 20px;")
+            h3 System level
+            p Errors above the page level, like a vendor outage or local connectivity issue.
+      .row
+        .default-text
+          hr(style="margin: 0;")
+      .row
+        //- TODO: mobile styles
+        .visible-lg.col-lg-4.col-lg-offset-1.text-right.remitly-new-pattern-desc
+          p
+            strong Previous patterns
+          p One-size-fits-all errors stacked in a top tray because red-on-navy made inline errors impractical. 
+          p Requires resolving error 1 to see additional errors
+          p Placeholders as labels - field information is lost during editing.
+        .col-xs-11.col-xs-offset-1.col-md-8.col-md-offset-4.col-lg-6.col-lg-offset-1
+          img(src="/img/remitly/remitly_compare_old.png", style="width: 100%;")
+        .col-xs-11.col-md-8.col-lg-6
+          img(src="/img/remitly/remitly_compare_new.png", style="width: 100%;")
+        .visible-lg.col-lg-4.col-lg-offset-1.remitly-new-pattern-desc
+          p
+            strong Revised patterns
+          p Errors can easily be displayed inline at an appropriate granularity. Support for feedback about multiple errors at once.
+          p Label information intact during editing.
+          p Critical extra data (date formats, password requrements, etc) can also be kept intact with help text.
+
+      .row.hidden-lg
+        .col-xs-9.col-xs-offset-2.col-md-6.col-md-offset-5
+          p
+            strong Previous patterns
+          p One-size-fits-all errors stacked in a top tray because red-on-navy made inline errors impractical. 
+          p Requires resolving error 1 to see additional errors
+          p Placeholders as labels - field information is lost during editing.
+        .col-xs-9.col-xs-offset-2.col-md-6
+          p
+            strong Revised patterns
+          p Errors can easily be displayed inline at an appropriate granularity. Support for feedback about multiple errors at once.
+          p Label information intact during editing.
+          p Critical extra data (date formats, password requrements, etc) can also be kept intact with help text.
+      .row
+        .default-text
+          hr(style="margin: 0;")
+      .row
+        .col-xs-22.col-xs-offset-1.col-lg-20.col-lg-offset-2
+          img(src="/img/remitly/remitly_mobile_screens.png", style="width: 100%;")
+    .row
+      .default-text
+        h2 Desktop UI
+        p The desktop version extends the mobile patterns and takes advantage of the increase in space.
+        p New navigation lets users know where they are in the process, the status of each step, and a summary of the information they’ve entered.
+
+    .panel.panel--remitly-gradient
+      .row
+        .col-xs-22.col-xs-offset-1
+          img(src="/img/remitly/remitly_desktop_screens.png", style="width: 100%;")
+
+    //- .row
+    //-   .default-text
+    //-     h2 Motion brand
+
+    //-     p Before marketing had a motion design team, I helped set the tone of our early TV/video style, animating the logotype and various assets for TV commericls airing on Univision in Latin America, as well as in the U.K, India, and the Philippines.
+    //- .row
+    //-   .col-sm-12
+    //-     //- video/gif
+    //-   .col-sm-12
+    //-     //- video/gif
+    //-   .col-sm-12
+    //-     //- video/gif
+    //-   .col-sm-12
+    //-     //- video/gif
+    //-   .col-sm-12
+    //-     //- video/gif
+    //-   .col-sm-12
+    //-     //- video/gif

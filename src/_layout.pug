@@ -2,6 +2,7 @@ doctype html
 html
   head
     meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     title Rick Steele | Product Designer
     link(rel="stylesheet" href="/styles/main.css")
     link(rel="icon" type="image/x-icon" href="/img/favicon.ico")
@@ -95,30 +96,30 @@ html
               //- wrap around to the next non-homepage(0) project
               -var next = menu[1];
 
-            footer(class='nav--' + selected)
-              a.nav__entry.col-sm-6(href='/' + prev.slug + '.html')
-                h5.nav__supertitle Previous Project:
-                h3.nav__title #{prev.title}
-                h5.nav__subtitle #{prev.subtitle}
+          //-   footer(class='nav--' + selected)
+          //-     a.nav__entry.col-sm-6(href='/' + prev.slug + '.html')
+          //-       h5.nav__supertitle Previous Project:
+          //-       h3.nav__title #{prev.title}
+          //-       h5.nav__subtitle #{prev.subtitle}
 
-              .contact.text-center.col-sm-12
-                p Hey! I'm currently taking on freelance work. I'd love to talk to you.  
-                //- a.btn.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
-                //-   | Download My Resume
+          //-     .contact.text-center.col-sm-12
+          //-       p Hey! I'm currently taking on freelance work. I'd love to talk to you.  
+          //-       //- a.btn.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
+          //-       //-   | Download My Resume
 
-                a.btn.intro-quote__btn(href="mailto:PatrickJSteele@gmail.com")
-                  | PatrickJSteele@gmail.com
+          //-       a.btn.intro-quote__btn(href="mailto:PatrickJSteele@gmail.com")
+          //-         | PatrickJSteele@gmail.com
 
-              a.text-right.nav__entry.col-sm-6(href='/' + next.slug + '.html')
-                h5.nav__supertitle Next Project:
-                h3.nav__title #{next.title}
-                h5.nav__subtitle #{next.subtitle}
-          else
-            footer(class='nav--' + selected)
-              .contact.text-center.col-xs-24
-                p Hey! I'm currently taking on freelance work. I'd love to talk to you. 
-                //- a.btn.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
-                //-   | Download My Resume
+          //-     a.text-right.nav__entry.col-sm-6(href='/' + next.slug + '.html')
+          //-       h5.nav__supertitle Next Project:
+          //-       h3.nav__title #{next.title}
+          //-       h5.nav__subtitle #{next.subtitle}
+          //- else
+          //-   footer(class='nav--' + selected)
+          //-     .contact.text-center.col-xs-24
+          //-       p Hey! I'm currently taking on freelance work. I'd love to talk to you. 
+          //-       //- a.btn.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
+          //-       //-   | Download My Resume
 
-                a.btn.intro-quote__btn(href="mailto:PatrickJSteele@gmail.com")
-                  | PatrickJSteele@gmail.com
+          //-       a.btn.intro-quote__btn(href="mailto:PatrickJSteele@gmail.com")
+          //-         | PatrickJSteele@gmail.com
