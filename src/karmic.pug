@@ -1,9 +1,5 @@
 extends ./_layout.pug
 
-append nav
-  block link
-    -var selected = 'karmic';
-
 block body
   .container-fluid
     .row
@@ -11,7 +7,7 @@ block body
 
     .row
       .default-text
-        h1.text-center File Expenses Like It's 2016.
+        h1.text-center Karmic
         p.text-center Winner of 2 PayBefore Awards: Rising Star and Best Mobile App
       
         hr
@@ -29,7 +25,7 @@ block body
         p
           strong That sucks.
 
-        p Karmic gives each employee a free debit card, and lets managers move money to and from those cards individually, with built in reporting and receipt management, so you can load a card and spend company money like it’s <code>{$CURRENT_YEAR}</code>
+        p Karmic gives each employee a free debit card, and lets managers move money to and from those cards individually, with built in reporting and receipt management, so you can load a card and spend company money like it’s <code>$current_year</code>
 
     //- hr
         

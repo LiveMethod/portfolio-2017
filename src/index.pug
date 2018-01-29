@@ -1,34 +1,63 @@
 extends ./_layout.pug
 
 block body
-  .container-fluid
+  .container-fluid.container--home
     .row.intro-quote
-      .col-xs-20.col-xs-offset-2.col-sm-16.col-sm-offset-4.col-md-10.col-md-offset-7
-        h2 I help companies focused on data communication and visualization build better products.
+      h1 Design + Code
+      .col-xs-20.col-xs-offset-2.col-sm-16.col-sm-offset-4.col-md-18.col-md-offset-3.col-lg-16.col-lg-offset-4
 
-        h2 
-          em Currently accepting freelance projects:
-          br
-          a(href="mailto:PatrickJSteele@gmail.com") PatrickJSteele@gmail.com
+        h2 I help companies with complex products create consistent, scalable design.
 
-        //- a.btn.btn-lg.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
-        //-   | Download My Resume
+        a.btn.btn-lg.intro-quote__btn(href="mailto:patrickjsteele@gmail.com")
+          | Get in touch
 
-        //- a.btn.btn-lg.intro-quote__btn(href="mailto:patrickjsteele@gmail.com")
-        //-   | Email Me
+    .row
+      a.project-hero.project-hero--remitly.col-xs-24.col-md-12(href="/remitly.html" style="overflow: hidden;")
+        img(src="/img/home/remitly-home.png")
+        .gradient-under
+        .info-card
+          h4 Remitly
+          p Helping immigrants send money home
+        .gradient-over
 
-    a.row.project-hero(href="/karmic.html")
-      img(src="/img/home/compressed/Karmic_Hero_01.jpg")
-      h1 Karmic
+      a.project-hero.project-hero--karmic.col-xs-24.col-md-12(href="/karmic.html" style="overflow: hidden;")
+        img(src="/img/home/karmic-home.png")
+        .gradient-under
+        .info-card
+          h4 Karmic
+          p Mobile first money transfer
+        .gradient-over
 
-    a.row.project-hero(href="/orchid.html")
-      img(src="/img/home/compressed/Orchid_Hero_02.jpg")
-      h1 Orchid
+    .row
+      a.project-hero.project-hero--orchid.col-xs-24.col-md-12(href="/orchid.html" style="overflow: hidden;")
+        img(src="/img/home/orchid-home.png")
+        .gradient-under
+        .info-card
+          h4 Orchid
+          p Personal spending data visualization
+        .gradient-over
 
-    a.row.project-hero(href="/palace.html")
-      img(src="/img/home/compressed/Palace_Hero_02.jpg")
-      h1 Palace
+      a.project-hero.project-hero--hex2sketch.col-xs-24.col-md-12(href="/hex2sketch.html" style="overflow: hidden;")
+        img(src="/img/home/hex2sketch-home.png")
+        .gradient-under
+        .info-card
+          h4 Hex 2 Sketch
+          p Turn web colors into sketch palettes
+        .gradient-over
 
-    a.row.project-hero(href="/animatik.html")
-      img(src="/img/home/compressed/Animatik_Hero_02.jpg")
-      h1 Animatik
+    .row
+      a.project-hero.project-hero--palace.col-xs-24.col-md-12(href="/palace.html" style="overflow: hidden;")
+        img(src="/img/home/palace-home.png")
+        .gradient-under
+        .info-card
+          h4 Palace
+          p Internet of Things control dashboard
+        .gradient-over
+
+      a.project-hero.project-hero--animatik.col-xs-24.col-md-12(href="/animatik.html" style="overflow: hidden;")
+        img(src="/img/home/animatik-home.png")
+        .gradient-under
+        .info-card
+          h4 Animatik
+          p Social media / photo editing
+        .gradient-over

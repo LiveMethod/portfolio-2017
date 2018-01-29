@@ -3,14 +3,21 @@
 //====================
 
 footer{
-  height: @footer-height;
-  background-color: #062735;
+  // height: @footer-height;
+  background-color: @home-background;
+  color: white;
+  text-align: center;
   overflow: hidden;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 0;
+
+  h2, .h2{
+    color: white;
+    padding: 40px 0;
+  }
 
   .btn{
     margin-top: 0;
@@ -21,5 +28,19 @@ footer{
       font-size: 18px;
       margin-top: 25px;
     }
+  }
+  .project-hero{
+    .info-card{
+      padding: 16px;
+
+      h4{
+        font-size: 24px;
+        margin: 0;
+      }
+
+      p{
+        font-size: 16px;
+      }
+    } 
   }
 }

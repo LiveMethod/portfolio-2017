@@ -25,6 +25,34 @@ html
       });
 
       /////////////////////////////////
+      // footer selection
+      /////////////////////////////////
+
+      $(document).ready(function(){
+
+        //- hide footer by default
+        $('footer').hide();
+
+
+        var project = window.location.pathname.split('.')[0].replace(/[^A-Za-z0-9\s!?]/g,'');
+        console.log("project: " + project);
+
+        if(project.length < 3){
+          project = undefined;
+        }
+
+        $('footer .project-hero').each( function(){
+          var classes = $(this).attr('class');
+          if( classes.indexOf(project) >= 0 ){
+            $('footer').show();
+            // add selection styles
+          }
+        } );
+      });
+
+
+
+      /////////////////////////////////
       // gfycat
       /////////////////////////////////
       (function(d, t) {
@@ -44,82 +72,62 @@ html
       ga('create', 'UA-8303297-1', 'auto');
       ga('send', 'pageview');
 
-    //- mixpanel
-    script.
-      (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
-      mixpanel.init("91da4d5d35327efc12b2fbf2560a2a9e");
-
   body
-    block nav
-      block link
-        -var selected = 'index'; // default
+    nav.nav--index
+      a.nav__entry(href="/index.html")
+        h3.nav__title Rick Steele
+        h5.nav__subtitle Product Designer
 
-      //- Jade only compiles one-line JS. kek.
-      -var a = {title: 'Rick Steele', subtitle: 'Product Designer', slug: 'index'};
-      -var b = {title: 'Karmic',      subtitle: 'Biz Spending',     slug: 'karmic'};
-      -var c = {title: 'Orchid',      subtitle: 'Transaction Viz',  slug: 'orchid'};
-      -var d = {title: 'Palace',      subtitle: 'Home Automation',  slug: 'palace'};
-      -var e = {title: 'Animatik',    subtitle: 'Image Editing',    slug: 'animatik'};
-      -var f = {title: 'SushiPro',    subtitle: 'Sushi Recipes',    slug: 'sushipro'};
-      -var menu = [a,b,c,d,e/*,f*/];
-
-      nav(class='nav--' + selected)
-        each entry in menu
-          if selected === entry.slug
-            a.nav__entry.nav__entry--active(href='/' + entry.slug + '.html')
-              h3.nav__title #{entry.title}
-              h5.nav__subtitle #{entry.subtitle}
-          else
-            a.nav__entry.nav__entry(href='/' + entry.slug + '.html')
-              h3.nav__title #{entry.title}
-              h5.nav__subtitle #{entry.subtitle}
     block body
 
-    block footer
-        -var selectedIndex = -1;
-        each entry in menu
-          if selected === entry.slug && selected !== 'index'
-            //- store the index of the current page
-            -var selectedIndex = menu.indexOf(entry);
-            
-            //- prepare objects for prev and next projects
-            if selectedIndex-1 >= 0
-              -var prev = menu[selectedIndex-1];
-            else
-              //- this isn't a real use case because there's no footer on the homepage
-              -var prev = menu[0];
+    footer.container-fluid
+      .row
+        h2 Other Projects
+      .row
+        a.project-hero.project-hero--remitly.col-xs-24.col-sm-12.col-md-8(href="/remitly.html" style="overflow: hidden;")
+          img(src="/img/home/remitly-thumb.png")
+          .gradient-under
+          .info-card
+            h4 Remitly
+            p Helping immigrants send money home
+          .gradient-over
 
-            if selectedIndex+1 <= menu.length-1
-              -var next = menu[selectedIndex+1];
-            else
-              //- wrap around to the next non-homepage(0) project
-              -var next = menu[1];
+        a.project-hero.project-hero--karmic.col-xs-24.col-sm-12.col-md-8(href="/karmic.html" style="overflow: hidden;")
+          img(src="/img/home/karmic-thumb.png")
+          .gradient-under
+          .info-card
+            h4 Karmic
+            p Mobile first money transfer
+          .gradient-over
 
-          //-   footer(class='nav--' + selected)
-          //-     a.nav__entry.col-sm-6(href='/' + prev.slug + '.html')
-          //-       h5.nav__supertitle Previous Project:
-          //-       h3.nav__title #{prev.title}
-          //-       h5.nav__subtitle #{prev.subtitle}
+        a.project-hero.project-hero--orchid.col-xs-24.col-sm-12.col-md-8(href="/orchid.html" style="overflow: hidden;")
+          img(src="/img/home/orchid-thumb.png")
+          .gradient-under
+          .info-card
+            h4 Orchid
+            p Personal spending data visualization
+          .gradient-over
 
-          //-     .contact.text-center.col-sm-12
-          //-       p Hey! I'm currently taking on freelance work. I'd love to talk to you.  
-          //-       //- a.btn.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
-          //-       //-   | Download My Resume
+        a.project-hero.project-hero--hex2sketch.col-xs-24.col-sm-12.col-md-8(href="/hex2sketch.html" style="overflow: hidden;")
+          img(src="/img/home/hex2sketch-thumb.png")
+          .gradient-under
+          .info-card
+            h4 Hex 2 Sketch
+            p Turn web colors into sketch palettes
+          .gradient-over
 
-          //-       a.btn.intro-quote__btn(href="mailto:PatrickJSteele@gmail.com")
-          //-         | PatrickJSteele@gmail.com
+        a.project-hero.project-hero--palace.col-xs-24.col-sm-12.col-md-8(href="/palace.html" style="overflow: hidden;")
+          img(src="/img/home/palace-thumb.png")
+          .gradient-under
+          .info-card
+            h4 Palace
+            p Internet of Things control dashboard
+          .gradient-over
 
-          //-     a.text-right.nav__entry.col-sm-6(href='/' + next.slug + '.html')
-          //-       h5.nav__supertitle Next Project:
-          //-       h3.nav__title #{next.title}
-          //-       h5.nav__subtitle #{next.subtitle}
-          //- else
-          //-   footer(class='nav--' + selected)
-          //-     .contact.text-center.col-xs-24
-          //-       p Hey! I'm currently taking on freelance work. I'd love to talk to you. 
-          //-       //- a.btn.intro-quote__btn(href="img/RickSteele_Resume_2016.pdf")
-          //-       //-   | Download My Resume
-
-          //-       a.btn.intro-quote__btn(href="mailto:PatrickJSteele@gmail.com")
-          //-         | PatrickJSteele@gmail.com
+        a.project-hero.project-hero--animatik.col-xs-24.col-sm-12.col-md-8(href="/animatik.html" style="overflow: hidden;")
+          img(src="/img/home/animatik-thumb.png")
+          .gradient-under
+          .info-card
+            h4 Animatik
+            p Social media / photo editing
+          .gradient-over

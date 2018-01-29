@@ -5,14 +5,14 @@
 .container-fluid{
   padding-top: 60px;
   position: relative;
-  background-color: #ffffff;
   z-index: 2;
   // footer margin off
   // margin-bottom: @footer-height;
 }
 
 nav{
-  background-color: #062735;
+  // background-color: #062735;
+  background-color: @home-background;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -29,7 +29,7 @@ nav{
   display: block;
   text-align: center;
   padding: 19px;
-  opacity: 0.3;
+  // opacity: 0.3;
 
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -38,6 +38,7 @@ nav{
     text-decoration: none;
     opacity: 1;
     cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
   }
 
   &--active{
@@ -165,5 +166,4 @@ nav{
       font-weight: bold;
     }
   }
-
 }

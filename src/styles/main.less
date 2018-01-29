@@ -30,6 +30,7 @@
 
 
 @home-background: #0C181E;
+@home-card-margin: 8px;
 @cyan: #00B1FE;
 
 
@@ -147,6 +148,7 @@
   margin: 0;
   border: none;
   border-radius: 0;
+  box-shadow: none;
 
   &--orchid-purple{
     background: #2c2d62;
@@ -249,6 +251,29 @@
     @media (min-width: @screen-md ){
       padding: 80px 0;
     }
+  }
+
+  &--hex2sketch-dark{
+    background-color: #222222;
+  }
+
+  &--hex2sketch-old{
+    background: #3E3E3E;
+
+    h3{
+      color: #8E8E8E;
+      text-align: center;
+    }
+
+    hr{
+      margin-top: 40px;
+      margin-bottom: 40px;
+      border-top-color: #545454;
+    }
+  }
+
+  &--hex2sketch-new{
+    background: #F2F2F2;
   }
 
 }
