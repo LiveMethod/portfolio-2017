@@ -1,0 +1,120 @@
+//====================
+// Google pets page
+//====================
+
+
+@google-red: #FF5050;
+@google-pale: #f6f7fa;
+
+//====================
+
+.password-box{
+  width: 400px;
+  padding-top: 200px;
+
+  .btn{
+    background-color: @google-red;
+    color: white;
+    font-weight: 500;
+  }
+}
+
+//===================
+
+.container--google{
+  min-width: 900px;
+  margin: 0 auto;
+
+  p {
+    color: #5E6A82;
+  }
+
+  h1, h2, h3, h4, strong{
+    color: #36445F;
+  }
+
+  a{
+    color: @google-red;
+  }
+}
+
+.panel--google-red{
+  background: @google-red;
+}
+.panel--google-pale{
+  background: @google-pale;
+}
+.panel--google-dark{
+  background: #36445F;
+}
+.panel--google-darker{
+  background: #283346;
+}
+
+.google-card, .google-persona{
+  .make-xs-column(20);
+  .make-xs-column-offset(2);
+  .make-sm-column(20);
+  .make-sm-column-offset(2);
+  .make-md-column(18);
+  .make-md-column-offset(3);
+  .make-lg-column(16);
+  .make-lg-column-offset(4);
+
+  margin-bottom: 60px;
+}
+
+.google-card{
+
+  background-color: white;
+  padding: 60px;
+
+  blockquote{
+    border: none;
+    color: #848EA1;
+    // border-color: #FF5050;
+    padding-left: 40px;
+
+    &::before{
+      content: "\201C"; /*Unicode for Left Double Quote*/
+      
+      /*Font*/
+      font-family: Georgia, serif;
+      font-size: 60px;
+      font-weight: bold;
+      color: @google-red;
+      
+      /*Positioning*/
+      position: absolute;
+      left: -5px;
+      top:5px;
+    }
+
+    &::after{
+      /*Reset to make sure*/
+      content: "";
+    }
+  }
+
+  .google-text{
+    .make-sm-column(16);
+    .make-sm-column-offset(4);
+  }
+}
+
+// rows in the research comparison
+// .google-compare .row:not(:first-child) > *{
+.google-compare {
+  // border-top: 1px solid black;
+  .row > * {
+    padding: 10px 20px;
+  }
+
+  &.stripe .row:nth-child(even) > * {
+    background-color: #F6F7FA;   
+  }
+
+  &.band .row:nth-child(even) {
+    background-color: #F6F7FA;
+  }
+}

@@ -1,0 +1,340 @@
+extends ./_layout.pug
+
+block body
+  script(src="/js/sorry.js")
+  .container.password-box
+    h2 Password: <input id='password' type='text'  />
+    a.btn.btn-lg(href="#" onclick="sorry()") Submit
+  .container-fluid.container--google(style="display: none")
+    img(src="/img/google/pets-hero.jpg", style="width: 100%;")
+    .panel
+      .row
+        h1.text-center Design Challenge: Pets
+        .default-text
+          h2 Premise
+
+          p Millions of animals are currently in shelters and foster homes awaiting adoption. Design an experience that will help connect people looking for a new pet with the right companion for them. Help an adopter find a pet which matches their lifestyle, considering factors including breed, gender, age, temperament, and health status. Provide a high-level flow and supporting wire frames.
+          
+          hr
+
+          h2 What do people feel about the adoption process?
+
+          p I started by reading extensively about how people approach the task of buying a pet, in their own words.
+
+          p The web is full of thousands of conversations with pet owners, animal activists, and people curious about the process of buying a pet. I spent a few hours visiting as many corners as I could, getting varied perspectives, and compiling quotes that encapsulated people's thoughts, fears, and motivations.
+
+          p These quotes were tagged by topic, and from there I compiled a summary of recurring themes.
+
+    .panel.panel--google-red
+      .row
+        .google-card.shadow
+          .row
+            .google-text
+              h2 The Subjective
+              h4 Aesthetic, Background, Breed, Age
+
+              p There's a lot of emotion, gut feelings, and presupposition built into the way we feel about pets. Many people begin the search for a pet with their mind made up about what's right for them.
+
+              p The app is structured in a way that provides guidance for people with an open mind about what fits their needs, and specificity for people who already know what they're looking for.
+              hr
+              h2 Age
+              p Age was one of the most common dividing lines in public opinion. Each side has their own rationales about what matters in a dog's age.
+          .google-compare.stripe
+            .row
+              .col-sm-11
+                h3 Puppy
+              .col-sm-11.col-sm-offset-1
+                h3 Adult
+            .row
+              .col-sm-11
+                h4 Fearful about pre-formed bad habits in adult shelter dogs
+              .col-sm-11.col-sm-offset-1
+                h4 Wants certainty about pre-formed behaviour
+            .row
+              .col-sm-11
+                h4 Wants control over behavioral development
+              .col-sm-11.col-sm-offset-1
+                h4 Wants to avoid the burden of training
+            .row
+              .col-sm-11
+                h4 Grows with the family
+              .col-sm-11.col-sm-offset-1
+                h4 Comes family ready
+          .row
+            .col-sm-11
+              blockquote Having a small child I would seriously think twice before adopting a shelter dog that may have serious training issues - either for the safely of my child or just the general stress on the home.
+            .col-sm-11.col-sm-offset-1
+              blockquote I don't have time now to train and take care of a puppy, so when we do get a dog again, it will be an adult rescue. 
+          
+          .google-text
+            .row
+              hr
+              h2 Origin
+              p Easily the most vitrolic argument in dog ownership, the question of shelter v.s. breeder is touchy but unavoidable.
+          .google-compare.stripe
+            .row
+              .col-sm-11
+                h3 Shelter
+              .col-sm-11.col-sm-offset-1
+                h3 Breeder
+            .row
+              .col-sm-11
+                h4 Focus on the dog community at large
+              .col-sm-11.col-sm-offset-1
+                h4 Focus on specific dogs
+            .row
+              .col-sm-11
+                h4 Values empathy above certainty
+              .col-sm-11.col-sm-offset-1
+                h4 Values guarantee about health and heritage
+            .row
+              .col-sm-11
+                h4 $ Charity 
+              .col-sm-11.col-sm-offset-1
+                h4 $$$$ Excellence
+            .row
+              .col-sm-11
+                h4 Stringent placement requirements
+              .col-sm-11.col-sm-offset-1
+                h4 Looser placement requirements
+          .row
+            .col-sm-11
+              blockquote It just makes my skin crawl that people can go out and spend hundreds sometimes thousands of dollars on a dog… when there are so so so many in shelters and rescues desperate for a home
+            .col-sm-11.col-sm-offset-1
+              blockquote I had a Shepherd with hip displaysia who was also going blind due to bad breeding. She suffered terribly for years without us knowing it until her hindquarters just completely collapsed one day … I know I have done everything I can to get healthy dogs who come from good backgrounds.
+
+          .google-text
+            .row
+              hr
+              h2 Household &amp; Family
+              p These simple topics are at the core of the decision making process, both for adoptive families and for the staff in charge of placement.
+          .google-compare.band
+            .row
+              .col-sm-11
+                h2 People
+                h4 What people will this dog share space with?
+              .col-sm-11.col-sm-offset-1
+                blockquote 50% of the dogs in the shelters here in Chicago were pit bulls. If it were just me, I’d have taken one. But the other people in my house couldn’t handle it.
+            .row
+              .col-sm-11
+                h2 Property
+                h4 What type of dog will enjoy this space?
+              .col-sm-11.col-sm-offset-1
+                blockquote My Mother In Law was looking to adopt a small dog since she lives in a condo. They denied her because she doesn't have a fenced in yard. 
+            .row
+              .col-sm-11
+                h2 Lifestyle
+                h4 What kind of activities will this dog be doing?
+              .col-sm-11.col-sm-offset-1
+                blockquote I was able to have only a very small dog, given my physical limitations and the landlord’s restrictions
+            .row
+              .col-sm-11
+                h2 Pets
+                h4 What animals will this dog share space with?
+              .col-sm-11.col-sm-offset-1
+                blockquote  With a puppy… we can raise him from when he’s little to be around cats and kids.
+          .google-text
+            .row
+              hr
+              h2 Edge Cases
+              p These topics are atypical, but came up often enough to deserve note.
+          .google-compare.band
+            .row
+              .col-sm-11
+                h2 Working Life
+                h4 Can this dog perform vital duties?
+              .col-sm-11.col-sm-offset-1
+                blockquote A working dog isn’t just a pet. It’s an investment. Adopting a shelter dog is always a gamble, but with a purebred, I know exactly what I’m getting. I can talk to the breeders, meet the parents, and choose the pup myself. So I can be certain that I’m getting a smart, talented, tractable working dog.
+            .row
+              .col-sm-11
+                h2 Medical Conditions
+                h4 Is this dog compatible with my mobility level / disabilties?
+              .col-sm-11.col-sm-offset-1
+                blockquote We wanted to find a small, sweet, quiet couch potato of a dog that was ok with cats to be a companion for a senior lady with Alzheimer's.
+    .panel.panel--google-dark
+      .row
+        .google-card.shadow
+          h2 Quick &amp; Dirty Personas
+          p I consdier the chunks of opinion above to be 
+            strong persona tokens 
+            | &mdash; bits of sentiment and motivation that can exist in many combinations within a single person. Forcing them into personas is as likely to lead to an inaccuract stratification as it is to new pieces of insight. I find that these tokens are plenty useful on their own, for example as prompts for the  
+            a(href="https://blog.intercom.com/using-job-stories-design-features-ui-ux/") Jobs To Be Done framework
+            | .
+
+            p In the interest of completeness, I put together a few cards based on some of the people I've spoken to about this topic, but reducing people to personas based on a few hours of research leads to some fairly clichè results.
+      .row
+        .google-persona
+          img.shadow(src="/img/google/persona-1.png", style="width: 100%;")
+      .row
+        .google-persona
+          img.shadow(src="/img/google/persona-2.png", style="width: 100%;")
+      .row
+        .google-persona
+          img.shadow(src="/img/google/persona-3.png", style="width: 100%;")
+    .panel.panel--google-darker
+      .row
+        .google-card.shadow
+          .google-text
+            h2 Marketplace
+            p Pet adoption is a 2 sided marketplace with separate challenges on the buy and sell side.
+          .google-compare.stripe
+            .row
+              .col-sm-11
+                h3 Adoption Side
+              .col-sm-11.col-sm-offset-1
+                h3 Listing Side
+            .row
+              .col-sm-11
+                h4 Working on filtering many dogs down to one.
+              .col-sm-11.col-sm-offset-1
+                h4 Responsible for listing and placing many dogs.
+            .row
+              .col-sm-11
+                h4 Bimodal: desires, when present, are specific. Flexible people are very flexible.
+              .col-sm-11.col-sm-offset-1
+                h4 Not necessarily experienced in marketing pets for adoption.
+          .google-text
+            hr
+            h2 Strategy
+            p A successful system will make the maximum number of pairings within the bounds of honesty.
+
+          .google-compare.stripe
+            .row
+              .col-sm-11
+                h3 Adoption Side
+              .col-sm-11.col-sm-offset-1
+                h3 Listing Side
+            .row
+              .col-sm-11
+                h4 Coach adopters through finding a selection of dogs that are right for them.
+              .col-sm-11.col-sm-offset-1
+                h4 Coach listers through presenting their dogs in a compelling way.
+    .row
+      .default-text
+        h2 Mile-high view
+        p The two sides' app experience looks something like this:
+        p 
+          strong Top: 
+          br 
+          | People looking to adopt dogs configure their preferences, browse available dogs, and arrive at a listing.
+        p 
+          strong Bottom:  
+          br
+          | Listers fill out their contact information (constant) and dog information (varies) to create a series of listings.
+        p Adopters contact listers via the messaging feature, where the two can communicate, schedule time to meet up, go through the necessary paperwork, and ultimately complete the sale.
+    .panel.panel--google-pale(style="overflow: hidden")
+      .row
+        .col-sm-20.col-sm-offset-2
+          img(src="/img/google/marketplace-diagram.png", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Experience Maps
+        p A more complete look at the paths between pages in the buyer and seller experiences.
+    .panel.panel--google-pale.text-center
+      .row(style="margin-top:40px;")
+        .col-sm-9.col-sm-offset-2
+          h2 Adopter Side
+            br
+            br
+          img(src="/img/google/buy-side-flow.png", style="width: 100%;")
+        .col-sm-9.col-sm-offset-2
+          h2 Lister Side
+            br
+            br
+          img(src="/img/google/sell-side-flow.png", style="width: 100%;")
+
+    
+    .row
+      .default-text.text-center(style="padding-bottom: 0;")
+        h1 Wireframes
+        p I narrowed the scope here as though this were an ongoing project: focusing on the core screens that 1) had multiple possible implementations and 2) were critical to the success of the app
+    .row(style="margin-top: 40px;")
+      .col-sm-20.col-sm-offset-2
+        img(src="/img/google/marketplace-diagram-wire-context.png", style="width: 100%;")
+    .panel.panel--google-pale
+      .default-text(style="padding-top: 0;")
+        h2 Questionnaire: The basics
+        p The account experience here is intentionally unintrusive. A first name for use when messaging sellers is all that's required. Payment info, etc can be deferred until later on. 
+        p The first few questions knock out the major points - breeder vs shelter, puppy vs adult, and sex. The "no preference" selectors are larger to steer users in the direction of most possible results.
+      .row
+        .col-sm-20.col-sm-offset-2
+          img(src="/img/google/wire-basics.png", style="width: 100%;")
+
+      .default-text
+        h2 Questionnaire: Home life
+        p These questions paint a picture of home life, which is useful when evaulating what types of dogs will enjoy a property, and which sellers are likely to consider a property sufficient for a given dog.
+        p The selections here compound visually - the user's home selection is the backdrop as they describe their family, which is the backdrop as they describe their current pets.
+        p The dog size illustrations scale up as the user adjusts the slider.
+      .row
+        .col-sm-20.col-sm-offset-2
+          img(src="/img/google/wire-home.png", style="width: 100%;")
+
+      .default-text
+        h2 Questionnaire: Temperament
+        p These questions frame broad indicators of temperament as everyday scenarios. They are based partially on the  
+          a(href="https://atts.org/tt-test-description/") American Temperament Test Society guidelines
+          | , which are very narrow in scope, so I also covered time alone and trainability, which are hot topics for shelters and adopters, respectively.
+      .row
+        .col-sm-20.col-sm-offset-2
+          img(src="/img/google/wire-temperament.png", style="width: 100%;")
+      .row
+        .col-sm-20.col-sm-offset-2
+          img(src="/img/google/wire-closing.png", style="width: 100%;")
+    .row        
+      .default-text
+        h2 Browsing 3 ways
+        p There are at least 3 possible ways to build the browsing experience, and I wireframed all of them in low fidelity. Without testing, it's difficult to know which of these 3 approaches is preferable.
+
+        h3 Approach 1: Map
+        p Display a map view that shows the volume and concentration of pets. This lets users browse with a focus on dogs that are readily availale, and in configurations that make it easy to meet the maximum number of dogs in the smallest period of time.
+
+        h3 Approach 2: Categories
+        p Display dynamic categories of dogs based on the user's stated preferences. As they interact with listings, the categories can morph and improve to become a better match. Think spotify discover, but for dog profiles.
+
+        h3 Approach 3: Focus
+        p The previous two approaches follow pathways that eventually lead to viewing profiles directly. It's possible that the best approach is to skip directly to that step. Doing so forces users to focus on a single dog at a time, in a way that is photo-intensive and thus emotionally intense.
+    .panel.panel--google-pale
+      .row
+        .col-sm-20.col-sm-offset-2
+          img(src="/img/google/wire-browse-map.png", style="width: 100%;")
+      .row(style="margin-top: 80px;")
+        .col-sm-12.col-sm-offset-3
+          img(src="/img/google/wire-browse-grid.png", style="width: 100%;")
+        .col-sm-4.col-sm-offset-2
+          img(src="/img/google/wire-browse-card.png", style="width: 100%;")
+    .row
+      .default-text.text-center
+        h1 Mockups
+        p In the same way that the overall flow was narrowed for wireframes, I further honed in on screens that were high impact and that could set the tone for the visual style across the application.
+    .panel.panel--google-pale
+      .row
+        .col-sm-22.col-sm-offset-1
+          img(src="/img/google/mocks-questions-home.png", style="width: 100%;")
+    .row
+      .default-text.text-center
+        h2 Category view
+        p Fun, relatable categories with emotional photography.
+        p Top nav shows filters populated by questionnaire
+    .panel.panel--google-pale(style="padding: 0")
+      .row
+        .col-sm-18.col-sm-offset-3
+          img(src="/img/google/mocks-grid.png", style="width: 100%;")
+    .row
+      .default-text.text-center
+        h2 Profile list
+        p I rejected a handful of implementations before landing on one that felt right.
+    .panel.panel--google-pale
+      .row
+        .col-sm-18.col-sm-offset-3
+          img(src="/img/google/mocks-listing-list.png", style="width: 100%;")
+    .row
+      .default-text.text-center
+        h2 Listings
+        p The first part of the listing is meant to transition readily from the list view. It contains additional stats about the dog, a brief bio, a summary of available health data, and information about the lister.
+    .panel.panel--google-pale
+      .row
+        .col-sm-8.col-sm-offset-3
+          img.shadow(src="/img/google/mocks-listing-tall.png", style="width: 100%;")
+        .col-sm-8.col-sm-offset-2
+          img(src="/img/google/mocks-listing-extra.png", style="width: 100%;")
