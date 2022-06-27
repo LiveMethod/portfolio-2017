@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf ./dist",
+    "pug": "./node_modules/.bin/pug ./src --out ./dist",
+    "less": "./node_modules/.bin/lessc ./src/styles/main.less ./dist/styles/portfolio.css",
+    "static": "cp -r ./src/fonts ./dist && cp -r ./src/img ./dist && cp -r ./src/js ./dist",
+    "build": "mkdir -p dist && npm pug && npm less && npm static",
+    "dev": "cd ./dist && python -m SimpleHTTPServer 8080"
   },
   "repository": {
     "type": "git",
@@ -17,6 +22,9 @@
   },
   "homepage": "https://github.com/LiveMethod/portfolio-2016#readme",
   "dependencies": {
-    "pug": "^0.1.0"
+    "harp": "^0.41.2",
+    "lessc": "^1.0.2",
+    "pug": "^0.1.0",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
