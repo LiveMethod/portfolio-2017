@@ -17,7 +17,7 @@ sudo npm install -g harp
 ## Build everything and serve it locally at :8080
 `make dev`
 
-*Deprecated:*
+# *Deprecated:*
 
 ## Build everything and substitute images for imgix CDN version
 `make imgix`
