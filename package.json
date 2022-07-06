@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/LiveMethod/portfolio-2016#readme",
   "dependencies": {
-    "harp": "^0.41.2",
     "lessc": "^1.0.2",
     "pug": "^0.1.0",
     "pug-cli": "^1.0.0-alpha6"

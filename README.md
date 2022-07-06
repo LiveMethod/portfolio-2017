@@ -1,23 +1,19 @@
-# portfolio-2017
+# Portfolio
 
-This project requires pug-cli (formerly jade) to build, and harp to run the dev server.
+This project requires pug-cli (formerly jade) to build.
 
-`
-sudo npm install -g pug-cli
-sudo npm install -g harp
-`
+## Primary yarn commands
 
+### `yarn clean`
+Delete `/dist`
 
-## Generate static files
-`make build`
+### `yarn build`
+Run all build scripts and output to `/dist`
 
-## Delete static files
-`make clean`
+### `yarn dev`
+Launch a dev server  on `localhost:8080`
 
-## Build everything and serve it locally at :8080
-`make dev`
-
-*Deprecated:*
-
-## Build everything and substitute images for imgix CDN version
-`make imgix`
+## Build subprocesses
+**`yarn pug`**: Compile templates to `/dist`
+**`yarn less`**: Compile less files to `/dist/styles`
+**`yarn static`**: Insert static assets – fonts, images, static JS.
