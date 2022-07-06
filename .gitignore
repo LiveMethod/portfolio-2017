@@ -22,3 +22,6 @@ dist
 
 # Assets (which are in dropbox and would otherwise 200x push/pull)
 assets
+
+# OSX
+.DS_Store

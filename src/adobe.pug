@@ -1,0 +1,102 @@
+extends ./_layout.pug
+
+block body
+  .container-fluid
+
+    .panel
+      .row
+        .col-xs-20.col-xs-offset-2.col-md-16.col-md-offset-4
+          img(src="/img/hex2sketch/hex2sketch-logo.png", style="width: 100%;")
+      .row
+        .default-text(style="padding-bottom: 0;")
+          h1.text-center Adobe Spectrum
+          p.text-center Design systems boiiiii
+    .row
+      .default-text
+        h2 Placeholder
+
+        p teext text text text
+
+    .panel.panel--hex2sketch-dark
+      .hidden-xs.hidden-sm.row(style="display: flex; flex-direction: row; align-items: center;")
+        .col-md-10.col-md-offset-2
+          img(src="/img/hex2sketch/hex2sketch-old.png", style="width: 100%;")
+        .col-md-9.col-md-offset-1.shadow(style="background: white; padding: 40px;")
+          h2(style="margin-top: 0;") Version 1
+          p The first iteration of this project took visual cues from a vintage terminal.
+          p It did the job, but it was immediately obvious that there was room for improvement.
+          p The most glaring omission was a preview of the colors entered.
+          p The tutorial on using the download was hidden by default, which was compact but needlessly complicated.
+      .hidden-md.hidden-lg.row
+        .col-xs-20.col-xs-offset-2
+          img(src="/img/hex2sketch/hex2sketch-old.png", style="width: 100%;")
+        .col-xs-20.col-xs-offset-2.shadow(style="background: white; padding: 40px;")
+          h2(style="margin-top: 0;") Version 1
+          p The first iteration of this project took visual cues from a vintage terminal.
+          p It did the job, but it was immediately obvious that there was room for improvement.
+          p The most glaring omission was a preview of the colors entered.
+          p The tutorial on using the download was hidden by default, which was compact but needlessly complicated.
+
+    .panel.panel--hex2sketch-old
+      .hidden-xs.hidden-sm.row(style="display:flex; flex-direction: row; padding: 0 60px")
+        .col-xs-8.col-xs-offset-0
+          h3 Without entry
+          hr
+          img(src="/img/hex2sketch/hex2sketch-old-disabled.png", style="width: 100%;")
+
+        .col-xs-8.col-xs-offset-1
+          h3 Invalid attempt
+          hr
+          img(src="/img/hex2sketch/hex2sketch-old-error.png", style="width: 100%;")
+
+        .col-xs-8.col-xs-offset-1
+          h3 Download available
+          hr
+          img(src="/img/hex2sketch/hex2sketch-old-valid.png", style="width: 100%;")
+
+      .hidden-md.hidden-lg.row
+        .col-xs-18.col-xs-offset-3
+          h3 Without entry
+          hr
+          img(src="/img/hex2sketch/hex2sketch-old-disabled.png", style="width: 100%;")
+
+        .col-xs-18.col-xs-offset-3
+          h3 Invalid attempt
+          hr
+          img(src="/img/hex2sketch/hex2sketch-old-error.png", style="width: 100%;")
+
+
+        .col-xs-18.col-xs-offset-3
+          h3 Download available
+          hr
+          img(src="/img/hex2sketch/hex2sketch-old-valid.png", style="width: 100%;")
+
+    .row
+      .default-text
+        h2 Iterating
+
+        p When I started integrating the palette preview, the dark theme didn’t feel right anymore. I wanted the color previews to feel like they were in an environment similar to where they’d actually end up - in a sketch window.
+
+        p I tried using a real image of the sketch palette container for this, but it felt corny and confusing without the context of the larger sketch sidebar.
+
+    .panel.panel--hex2sketch-new
+      .row
+        img.col-xs-22.col-xs-offset-1.col-md-18.col-md-offset-3.col-lg-14.col-lg-offset-5(src="/img/hex2sketch/hex2sketch-light.png")
+      .row
+        .col-xs-12.col-xs-offset-6.col-md-8.col-md-offset-8
+          .text-center(style="padding-top:20px")
+            | Splitting the make and download buttons broke the linear flow that made the original feel so simple.
+
+    .row
+      .default-text
+        h2 Final Version
+
+        p The final version maintains the linear flow of the original, with palette preview styles that feel similar to sketch, and the instructions visible by default.
+        
+        p You can visit the real thing at  
+          a(href="http://hex2sketch.com") www.hex2sketch.com
+          | .
+
+    .panel.panel--hex2sketch-new
+      .row
+        img.shadow.col-xs-22.col-xs-offset-1.col-md-18.col-md-offset-3.col-lg-14.col-lg-offset-5(src="/img/hex2sketch/hex2sketch-full.png")
