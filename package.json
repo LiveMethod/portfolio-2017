@@ -8,7 +8,7 @@
     "pug": "./node_modules/.bin/pug ./src --out ./dist",
     "less": "./node_modules/.bin/lessc ./src/styles/main.less ./dist/styles/portfolio.css",
     "static": "cp -r ./src/fonts ./dist && cp -r ./src/img ./dist && cp -r ./src/js ./dist",
-    "build": "mkdir -p dist && npm pug && npm less && npm static",
+    "build": "mkdir -p dist && yarn pug && yarn less && yarn static",
     "dev": "cd ./dist && python -m SimpleHTTPServer 8080"
   },
   "repository": {
