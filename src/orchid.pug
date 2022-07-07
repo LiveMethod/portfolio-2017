@@ -1,6 +1,6 @@
-extends ./_layout.pug
+extends ./_rail-layout.pug
 
-block body
+block content
   .container-fluid
     .row.panel.panel--orchid-space
       img.col-xs-22.col-xs-offset-1.col-md-16.col-md-offset-4(src="/img/orchid/compressed/Orchid_Browser_Demo_02.png")
@@ -9,10 +9,10 @@ block body
       .default-text
         h1.text-center Personal Finance Tools
 
-        h2 Premise
+        h2 Context
         p No piece of personal finance software gave me the tools I wanted, so I rolled my own.
 
-        p It scrapes my debit card data from Simple's API, drops it into MongoDB, and gives me a custom interface that lets me interact with my spending in a way that fits my mental model, and more importantly, my actual financial goals.
+        p It scrapes my debit card data from Simple's API, drops it into MongoDB, and gives me a custom interface that lets me interact with my spending in a way that fits my mental model and – more importantly – my actual financial goals.
 
         p It’s designed to do 
           strong a small number of really opinionated things:
@@ -23,11 +23,14 @@ block body
           li Answer the question “how much of my spending is frivolous?” by tracking real spending against ideal spending, showing me how close I got to spending only on what matters.
 
           li Display purchases in a few exploratory formats meant to help spending patterns stand out better than they would in a list.
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+    .spacer
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+    //- ////////////////////////////////////////////////////////////////////////////////////////
 
-        //- p If you’d like, the code is available on github.
-
-        hr
-
+    .row
+      .default-text
         h2 Tracking Spending Efficiency
 
         p One of the most vaulable parts of this software is also the most simple.
@@ -72,9 +75,9 @@ block body
           
             p(style="color: #ABD6EA;") The percentage of possible savings that were actually saved.
 
-
-
     //- ////////////////////////////////////////////////////////////////////////////////////////
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+    .spacer
     //- ////////////////////////////////////////////////////////////////////////////////////////
     //- ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -136,26 +139,12 @@ block body
         p Additionally, the title bar has an counter-style animation when the number changes.
 
     .row.panel.panel--orchid-pink
-      //- .hidden-xs.hidden-sm
-      .col-md-8.col-md-offset-8
-        img.gfyitem(data-id="VillainousFemaleGoose", data-controls="false", data-dot="false" data-expand="true" data-responsive="true")
-      //- .visible-xs.visible-sm.col-xs-18.col-xs-offset-3.col-sm-12.col-sm-offset-6(style='position:relative;padding-bottom:54%')
-      //-   iframe(src='https://gfycat.com/ifr/VillainousFemaleGoose#?format=gif' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen)
-
-    //- .row
-    //-   .default-text
-
-    //-     h3 Keyboard Input
-
-    //-     p After building the above version, it occured to me that a keyboard input using the number keys would be a faster ranking system than clicking. You just need a way to turn it on and highlight the selected transaction.
-
-    //-     p Here’s what I came up with:
-
-    //-     //- 
-
-    //-     p Clicking the keyboard button turns on numpad entry mode, which highlights the first entry in the list for ranking. Pressing any key 1 - (1)0 will rank the transaction and move on to the next. There’s currently no skip functionality, but I’ll eventally bind the arrow keys to that.
+      .col-xs-22.col-xs-offset-1.col-sm-16.col-sm-offset-4.col-lg-12.col-lg-offset-6
+        img(src="/img/orchid/Orchid_RateCards_01.gif" style="width:100%")
 
     //- ////////////////////////////////////////////////////////////////////////////////////////
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+    .spacer
     //- ////////////////////////////////////////////////////////////////////////////////////////
     //- ////////////////////////////////////////////////////////////////////////////////////////
 

@@ -1,6 +1,6 @@
-extends ./_layout.pug
+extends ./_rail-layout.pug
 
-block body
+block content
   .container-fluid
 
     .panel
@@ -13,7 +13,7 @@ block body
           p.text-center Turn web colors into sketch palettes.
     .row
       .default-text
-        h2 Premise
+        h2 Context
 
         p The 
           a(href="https://github.com/andrewfiorillo/sketch-palettes") Sketch Palettes  
@@ -21,12 +21,21 @@ block body
 
         p Only one problem… where do sketch palettes actualy come from?
 
-        p It turned out there was no good answer, so I built a tool that could create them. It’s 
-          a(href="https://github.com/LiveMethod/web-to-sketch-palette") on github  
-          | and will soon be available as a CLI tool to automatically generate new palettes during your style guide’s build process.
+        p It turned out there was no good answer, so I built a tool that could create them.
 
         p
-          a(href="http://hex2sketch.com") Try it out
+          strike(style="color: #cc0000; opacity:0.4; text-decoration-thickness: 2px;")
+            a(href="http://hex2sketch.com" style="cursor:default !important") Try it out
+        p After five years of service, the Hex2Sketch site is retired, but the source code
+          a(href="https://github.com/LiveMethod/web-to-sketch-palette") remains available on github
+          |.
+    
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+    .spacer
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+    //- ////////////////////////////////////////////////////////////////////////////////////////
+
     .panel.panel--hex2sketch-dark
       .hidden-xs.hidden-sm.row(style="display: flex; flex-direction: row; align-items: center;")
         .col-md-10.col-md-offset-2
@@ -80,7 +89,7 @@ block body
           h3 Download available
           hr
           img(src="/img/hex2sketch/hex2sketch-old-valid.png", style="width: 100%;")
-
+    
     .row
       .default-text
         h2 Iterating

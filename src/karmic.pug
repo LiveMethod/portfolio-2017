@@ -1,18 +1,23 @@
-extends ./_layout.pug
+extends ./_rail-layout.pug
 
-block body
+block content
   .container-fluid
-    .row
+    .row.visible-xl
+      .default-text.default-text--round-top
+        h1.text-center Karmic
+        p.text-center Winner of 2 PayBefore Awards: Rising Star and Best Mobile App
+
+    .row.shadow.panel.panel--flush.panel--round
       img.col-xs-24(src="/img/karmic/compressed/Phone_Grid_Populated.jpg")
 
     .row
-      .default-text
-        h1.text-center Karmic
-        p.text-center Winner of 2 PayBefore Awards: Rising Star and Best Mobile App
-      
-        hr
+      .default-text.default-text--round-bottom
+        .hidden-xl
+          h1.text-center Karmic
+          p.text-center Winner of 2 PayBefore Awards: Rising Star and Best Mobile App
+          hr
 
-        h2 Premise
+        h2 Context
         p When your employees want to buy something with company money, they get teleported to the 1960s.
 
         p There’s thermal paper everywhere, in person reporting, and a whole lot of waiting around hoping things don’t go sideways. Apps like Expensify only remedy the tail end of the process - reimbursement after the money is spent.
@@ -27,65 +32,9 @@ block body
 
         p Karmic gives each employee a free debit card, and lets managers move money to and from those cards individually, with built in reporting and receipt management, so you can load a card and spend company money like it’s <code>$current_year</code>
 
-    //- hr
-        
-    //-     h2 UX Challenge: Demystifying Money Movement
-
-    //-     p Karmic is different from traditional corporate cards, and the concept of a reloadable, general purpose business prepaid card is often foreign to small business owners.
-
-    //-     p One of the first conceptual hurdles is how Karmic gets its funding:  from a company’s existing bank accounts, similar to the way you'd load a Venmo account for the first time.
-
-    //-     h3 Human-Friendly Terminology
-
-    //-     p If everyday business owners were going to make sense of this, step one was to use language that didn’t scare people away.
-
-    //-     p The original version of Karmic (called Dash) used the same language with users that the engineers used internally, describing “Card Funding Events from the Primary Virtual Account” when they really meant  “sending money to a card”
-
-    //-     p We established a description of Karmic’s money movement model that used language that was easy to reason about, and mapped to real-world objects and concepts:
-
-
-    //- .panel.panel--karmic-snapchat      
-    //-   .row(style="display:flex; flex-direction: row;")
-    //-     .col-sm-6.col-sm-offset-2
-    //-       img(src="/img/karmic/Pyramid_Bank.gif", style="width: 100%;")
-    //-     .col-sm-7.col-sm-offset-2
-    //-       h3 Bank Account
-    //-       p A company’s pre-existing bank account.
-    //-     .hidden-xs.hidden-sm.col-sm-4.col-sm-offset-2(style="border-left: 4px solid #E2EDF1; align-self:stretch; display:flex; align-items:center; margin-bottom: 20px; padding-left: 20px")
-    //-       p Not Karmic
-
-    //-   .row(style="display:flex; flex-direction: row;")
-    //-     .col-sm-6.col-sm-offset-2(style="align-self:stretch; display:flex; align-items:center;")
-    //-      img(src="/img/karmic/Pyramid_Vault.gif", style="width: 100%;")
-        
-    //-     .col-sm-7.col-sm-offset-2
-    //-       h3 The Vault
-    //-       p Companies load The Vault from their Bank Account. This is the money that can be distributed to employees.
-    //-     .hidden-xs.hidden-sm.col-sm-4.col-sm-offset-2(style="border-left: 4px solid #00B1FE; align-self:stretch; display:flex; align-items:center; padding-left: 20px")
-    //-       p &nbsp;
-
-    //-   .row(style="display:flex; flex-direction: row; align-items: center")
-    //-     .col-sm-6.col-sm-offset-2(style="clear:both;")
-    //-       img(src="/img/karmic/Pyramid_Cards.gif", style="width: 100%;")
-
-    //-     .col-sm-7.col-sm-offset-2
-    //-       h3 Employee Cards
-    //-       p Companies can give cards to an unlimited number of employees, and money can be transferred between the vault and employee’s cards fluidly.
-          
-    //-     .hidden-xs.hidden-sm.col-sm-4.col-sm-offset-2(style="border-left: 4px solid #00B1FE; align-self:stretch; display:flex; margin-bottom: 20px; padding-left: 20px")
-    //-       p Karmic
-      
-    //-   .row(style="display:flex; flex-direction: row;")
-    //-     .col-sm-6.col-sm-offset-2
-    //-       img(src="/img/karmic/Logos_Pyramid.png", style="width: 100%;")
-    //-     .col-sm-7.col-sm-offset-2
-    //-       h3 Merchants
-    //-       p Anywhere you spend with a Karmic card.
-    //-     .hidden-xs.hidden-sm.col-sm-4.col-sm-offset-2(style="border-left: 4px solid #E2EDF1; align-self:stretch; display:flex; align-items:center; margin-bottom: 20px; padding-left: 20px")
-    //-       p Not Karmic
-
+    .spacer
     .row
-      .default-text
+      .default-text.default-text--round-top
         h1.text-center Sending Money
         
         p This is the core interaction. The entire usefulness of Karmic’s app hinges on being able to do this one thing really well.
@@ -94,13 +43,14 @@ block body
       
         h3 Version 1: Modal
 
-        p One early idea was a pop-up modal that was accessible anywhere in the app. It started with a search for employees and a simple numpad, with a constantly present visual reminder of what the transaction would look like (user_foo &raquo; $n &raquo; user_bar)
+        p One early idea was a pop-up modal that was accessible anywhere in the app. It started with a search for employees and a simple numpad, with a constantly present visual reminder of what the transaction would look like 
+          code sender ⇢ $amount ⇢ recipient
 
         p The confirm dialog also contained a recap of the amount and recipient.
 
         p Much of this survived in some form through the final version.
 
-    .row.panel.panel--checker
+    .row.panel.panel--checker.panel--round
       img.col-xs-24.col-xs-offset-0.col-md-22.col-md-offset-1.col-lg-20.col-lg-offset-2(src="/img/karmic/compressed/Karmic_Mocks_v1_Snapchat.png")
 
     .row
@@ -111,7 +61,7 @@ block body
 
         p The big inclusions here are early in the flow -  an experimental toggle between sending a requesting lets users accomplish two very similar actions with the same widget, and the subtitles on the user list gives context for that employee’s existing financial state.
 
-    .row.panel.panel--karmic-blue
+    .row.panel.panel--karmic-blue.panel--round
       img.col-xs-24.col-xs-offset-0.col-md-22.col-md-offset-1.col-lg-20.col-lg-offset-2(src="/img/karmic/compressed/Karmic_Mocks_v2_Snapchat_Text.png")
 
     .row
@@ -122,7 +72,7 @@ block body
 
         p At the same time, we tried using the send button area to offer multiple options. This made a lot of sense in scenarios where choices were very similar, like the split between requesting money and auto-approving money that had already been budgeted. In the case of send/remove, the split felt too strong, and we ended up going in another direction later on.
 
-    .panel.panel--karmic-snapchat
+    .panel.panel--karmic-snapchat.panel--round
       .row
         img.col-xs-24.col-xs-offset-0.col-md-22.col-md-offset-1.col-lg-20.col-lg-offset-2(src="/img/karmic/compressed/Karmic_Mocks_v2.5_Snapchat_Text.png")
 
@@ -149,14 +99,14 @@ block body
         img(src="/img/karmic/compressed/Karmic_Mocks_QuickAdd_2.png", style="width: 100%;")
 
     .row
-      .card-text
+      .default-text
         h3 Version 3: Big Amount / Summary View
 
         p V3 started the send flow process with an empty summary of the send action, and persisted that summary as users filled in the various sections.
 
         p We experimented with a few variants of this layout, splitting sender and recipient horizontally vs vertically, etc.
     
-    .row.panel.panel--karmic-blue
+    .row.panel.panel--karmic-blue.panel--round
       img.col-xs-24.col-xs-offset-0.col-md-22.col-md-offset-1.col-lg-20.col-lg-offset-2(src="/img/karmic/compressed/Karmic_Mocks_v3_Summary_Options_02.png")
 
     .row
@@ -169,7 +119,7 @@ block body
 
         p People’s feedback was that the interactions are short enough that you can keep the summary in your head while you choose a person and enter a dollar amount - the cost of context switching from list to summary to amount outweighed the benefits of more descriptive updates.
     
-    .panel.panel--karmic-snapchat
+    .panel.panel--karmic-snapchat.panel--round
       .row(style="margin-bottom: 100px;")
         h3.col-xs-24.text-center Long Version (Interstitial Summary Pages)
         img.col-xs-24.col-xs-offset-0.col-md-22.col-md-offset-1.col-lg-20.col-lg-offset-2(src="/img/karmic/compressed/Karmic_Mocks_v3_Snapchat_Text_Long.png")
@@ -189,7 +139,7 @@ block body
 
         p There were also some tweaks to the summary on the amount screen, making it more pronounced.
 
-    .panel.panel--karmic-snapchat
+    .panel.panel--karmic-snapchat.panel--round-top
 
       .hidden-xs.hidden-sm.row(style="display:flex; flex-direction: row; padding: 0 60px")
         .shadow.col-xs-6.col-xs-offset-0(style="background: white; padding: 20px; display: flex; flex: 1 100%; flex-direction: column")
@@ -224,7 +174,7 @@ block body
           p Set the amount the user's card should end up with, and Karmic will do the math and add whatever it takes to get to that amount.
         
   
-    .panel.panel--karmic-blue
+    .panel.panel--karmic-blue.panel--round-bottom
       .row
         img.col-xs-24.col-xs-offset-0.col-md-22.col-md-offset-1.col-lg-20.col-lg-offset-2(src="/img/karmic/compressed/Karmic_Mocks_v4_Snapchat_Text.png")
           
@@ -236,8 +186,9 @@ block body
     //-     h2 Try It!
     //-     p Rather than write 3 more pages about edge cases and error handling, why don’t you just try to break it?
 
+    .spacer
     .row
-      .default-text
+      .default-text.default-text--round-top
         h1.text-center Web App: Transaction View
         
         p The Karmic web app is mostly a layout-adapted version of the mobile app, and is meant only as a supplement to the main mobile app.
@@ -246,7 +197,7 @@ block body
 
         p We used the extra space afforded by the larger screen to surface a ton of power-user functionality for the CFO/comptroller types. These users often asked us how to format their data in very detailed, company-specific ways - filtering by custom date ranges and sorting based on their individual accounting categories.
 
-    .panel.panel--karmic-night
+    .panel.panel--karmic-night.panel--round
       .row
         img.col-xs-22.col-xs-offset-1.col-md-18.col-md-offset-3(src="/img/karmic/compressed/Web_History_Browser_02.png")
 
@@ -280,26 +231,29 @@ block body
           
             p(style="color: #ABD6EA;") Issue reminders to employees whose transactions are missing data you need for complete accounting records.            
 
-    .row.panel
-      .default-text
-        h1.text-center The Guilloche
+    .spacer
 
-      .col-xs-20.col-xs-offset-2.col-sm-16.col-sm-offset-4.col-md-12.col-md-offset-6.col-lg-8.col-lg-offset-8
+    .row
+      .default-text.default-text--round-top
+        h1.text-center The Guilloche
+      
+      .span.text-center.default-text.default-text--flush
         img(src="/img/karmic/compressed/Dash_Card_01.jpg", width="100%")
 
       .default-text
         p Karmic's card product was originally called Dash. The Dash logotype and mark was developed by <a href="http://www.williamsonadams.com/">Williamson Adams</a> before I joined the company. It was featured in the original card art, but I wanted to explore a more modern look for the Karmic brand.
 
-        p The <a href="https://www.google.com/search?q=guilloche&source=lnms&tbm=isch">Guilloche</a> is a classic visual in finance design, having been added to bank notes throughout history as both ornament and forgery protection. Bank Simple has already aced the guilloche-as-logo, so I was forced to look for a separate solution. The answer ended up coming from the original Dash logo, incrementally doubled over itself.
+        p The <a href="https://www.google.com/search?q=guilloche&source=lnms&tbm=isch">Guilloche</a> is a classic visual in finance design, having been added to bank notes throughout history as both ornament and forgery protection. Bank Simple (RIP) had already aced the guilloche-as-logo at the time, so I was forced to look for a separate solution. The answer ended up coming from the original Dash logo, incrementally doubled over itself.
 
+    .row.panel.panel--round-top
       img.col-xs-22.col-xs-offset-1.col-md-18.col-md-offset-3(src="/img/karmic/compressed/Guilloche_Origin_01.jpg", width="100%")
 
-    .row
+    .row.panel.panel--flush.panel--round-bottom
       img.col-xs-24(src="/img/karmic/compressed/Karmic_Card_Table_02.jpg")
     
     .row
       .default-text
         p I also designed a moodboard that outlined where I hoped to take the Karmic brand, and while the business chose to stick with the existing brand assets, I’m including it because I really like the way it turned out.
 
-    .row
+    .row.panel.panel--flush.panel--round
       img.col-xs-24(src="/img/karmic/compressed/Karmic_Brand_Moodboard_01.jpg")
