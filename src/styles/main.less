@@ -15,27 +15,29 @@
 
 @grid-columns: 24;
 @grid-gutter-width: 0px;
+@max-content-width: 1100px;
 
-// @screen-xs: 400px;
-// @screen-sm: 600px;
-// @screen-md: 850px;
-// @screen-lg: 1200px;
-// @screen-xl: 1680px;
+// Width of the sidebar. Abstracted here because it's
+// used by both the rail itself and the spacer in the 
+// content sections.
+@rail-width-xs: 100%;
+@rail-width-sm: @rail-width-xs;
+@rail-width-md: 260px;
+@rail-width-lg: 360px;
+@rail-width-xl: @rail-width-lg + 40px;
 
 @heading-text: #173A4A; //#091520;
 @heading-weight: 700;
 @body-text: #6A8693;
-@strong-text: #427186;
+@strong-text: #173A4A;
 @border-radius: 8px;
 
 @footer-height: 120px;
 
 
-@home-background: #0088dc;
+@home-background: #061a2f;
 @home-card-margin: 8px;
 @cyan: #00B1FE;
-
-
 
 
 //====================
@@ -59,52 +61,54 @@ body{
   -webkit-transition: padding 0.2s ease-in-out;
   -moz-transition: padding 0.2s ease-in-out;
 
-  background: red;
-
-  @media (min-width: @screen-sm){
-    padding:16px;
-    background: orange;
-  }
-  
-  @media (min-width: @screen-md){
-    background:yellow;
-  }
-
-
-  @media (min-width: @screen-lg){
-    background:green;
-    padding:40px;
-  }
-  
-  @media (min-width: @screen-xl){
-    background:blue;
-  }
-
-
-
 }
-#wrapper{
+
+// Section tags are used for full-width sections that contain bootstrap rows,
+// panels, etc. Thise give full page backgrounds behind wrapped content.
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
   width: 100%;
-  max-width: 1500px;
 
+  @media (min-width: @screen-sm){
+    padding:16px;
+  }
+
+  // MD and forward (when the rail is a rail and not fullscreen)
+  // pad the content area so the fixed rail can fit.
   @media (min-width: @screen-md){
-    flex-direction: row;
+    padding:16px;
+    padding-left: @rail-width-md + 16px;
+  }
+  @media (min-width: @screen-lg){
+    padding:40px;
+    padding-left: @rail-width-lg + 40px;
+  }
+
+  &.dark{ background: @home-background; }
+  &.midlight{ background: #dbe7ec; }
+
+  >.container-fluid {
+    overflow: visible;
+    max-width: @max-content-width;
+    // >.row, >.panel{
+    // }
   }
 }
+
+.panel{
+  position: relative;
+  &-blank{
+    background:none;
+  }
+}
+
 #content{
-  // background-color: white;
   flex: 1;
   @media (min-width: @screen-md){
     overflow: hidden;
-    border-radius: @border-radius;
-    margin-left: 20px;
-  }
-  @media (min-width: @screen-lg){
-    margin-left: 40px;
+    
   }
 
   -webkit-transition: width 0.2s ease-in-out;
@@ -114,6 +118,7 @@ body{
 // the normal column, optimized for line length
 .default-text{
   background: white;
+  position: relative;
   padding: 60px 0;
   margin: 0 auto;
 
@@ -129,22 +134,10 @@ body{
   @media (min-width: @screen-lg){ 
     padding: 100px 140px;
   }
-  @media (min-width: @screen-xl){
-    max-width: 1000px;
-  }
 
   &--flush{
     padding:0;
   }
-
-  // &--round-top{
-  //   border-top-left-radius: @border-radius * 2;
-  //   border-top-right-radius: @border-radius * 2;
-  // }
-  // &--round-bottom{
-  //   border-bottom-left-radius: @border-radius * 2;
-  //   border-bottom-right-radius: @border-radius * 2;
-  // }
 }
 
 // text in a padded white card
@@ -231,25 +224,6 @@ body{
     padding: 0;
   }
 
-  // &--round {
-  //   @media (min-width: @screen-xl){
-  //     border-radius: @border-radius;
-  //   }
-  // }
-
-  // &--round-top {
-  //   @media (min-width: @screen-xl){
-  //     border-top-right-radius: @border-radius;
-  //     border-top-left-radius: @border-radius;
-  //   }
-  // }
-
-  // &--round-bottom {
-  //   @media (min-width: @screen-xl){
-  //     border-bottom-right-radius: @border-radius;
-  //     border-bottom-left-radius: @border-radius;
-  //   }
-  // }
   margin: 0;
   border: none;
   border-radius: 0;
@@ -436,10 +410,3 @@ body{
 .remitly-new-pattern-desc {
   padding-top: 160px;
 }
-
-// // Round full-width images
-// .row > img.col-xs-24 {
-//   @media (min-width: @screen-xl){
-//     border-radius: @border-radius;
-//   }
-// }

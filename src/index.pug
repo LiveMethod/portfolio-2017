@@ -1,80 +1,47 @@
 extends ./_rail-layout.pug
 
 block content
-  .container-fluid.container--home
-    .row.intro-quote
-      h1 Design + Code
-      .col-xs-20.col-xs-offset-2.col-sm-16.col-sm-offset-4.col-md-18.col-md-offset-3.col-lg-16.col-lg-offset-4
+  section
+    .container-fluid
+      .row
+        .default-text
+          ul
+            li I'm Rick
+            li Hybrid design + dev. Extremely experienced product designer, sufficiently dangerous in react/typescript.
+            li A design technologist, most recently building custom tooling to help [Adobe] manage one of the world's largest design systems with a team of only 20 or so.
+            
+            li Strong background in fintech, govtech:
+              ul
+                li Experience building compliant products in regulated environments. Used to doing design reviews with lawyers.
+                li Comfortable in extremely high stakes environments. I spent 9 months as the sole product designer for [a checkout system that moved $7B/yr]. Zero hiccups.
+                li I arrive already ramped on i18n-responsive design, WCAG, semantic HTML/ARIA, 508c, assistive devices, etc.
 
-        h2 I help companies with complex products create consistent, scalable design.
+          h5 Some interesting topics I'd be down to nerd out about
+          ul
+            li Abstractions from other domains that have utility for design systems, particularly token management and propagation
+              ul
+                li strong typing / type guards
+                li reactive programming / signal processing
+                li finite state machines
+                li formal logic programming / provability / permutability
+                li DSLs/parsers/compilers and why we don't right more of them
+                li automation and the future of design / asset production
+  section(style="background: #5cb85c")
+    .container-fluid
+      .row
+        .default-text
+          h2 I'm open to new roles right now.
+          p I'm currently on 🏝️ sabbatical, but I'm available to talk / interview immediately for <strong>full time roles starting in Fall of 2022</strong> (no sooner than Sept 1st).
 
-        //- a.btn.btn-lg.intro-quote__btn(href="mailto:patrickjsteele@gmail.com")
-        //-   | Get in touch
+          h4 Here are some details to check if it's a good fit:
+          ul
+            li Hybrid design/dev design system focused, particularly working on devtools, automation, or large scale.
+            li Next-gen design system authoring, maintenance, and deployment. Helping fiercely technical design teams grow impact without growing headcount.
+            li Anomalously high agency / high autonomy. It's encouraging when calendars, repos, decision criteria, etc are default-visible.
+          
+          h4 Logistics
+          ul
+            li I'm located in Seattle. Relocation somewhere warmer/sunnier is on the table, but (permanently) returning to the SF bay area is not.
+            li Hybrid remote friendly. 5 Days a week is too much office time, but I'm a fan of <em>some</em> office presence, either locally or flying on site. Frequent travel (including to SF) isn't a problem.
 
-    .row
-      a.project-hero.project-hero--adobe.col-xs-24.col-md-12(href="/adobe.html" style="overflow: hidden;")
-        img(src="/img/home/adobe-home.png")
-        .gradient-under
-        .info-card
-          h4 Adobe Spectrum
-          p Design systems at scale
-        .gradient-over
-
-      a.project-hero.project-hero--passbook.col-xs-24.col-md-12(href="/passbook.html" style="overflow: hidden;")
-        img(src="/img/home/passbook-home.png")
-        .gradient-under
-        .info-card
-          h4 Passbook
-          p Mobile lending workflows
-        .gradient-over
-
-    .row
-      a.project-hero.project-hero--remitly.col-xs-24.col-md-12(href="/remitly.html" style="overflow: hidden;")
-        img(src="/img/home/remitly-home.png")
-        .gradient-under
-        .info-card
-          h4 Remitly
-          p Pattern library for financial products
-        .gradient-over
-
-      a.project-hero.project-hero--karmic.col-xs-24.col-md-12(href="/karmic.html" style="overflow: hidden;")
-        img(src="/img/home/karmic-home.png")
-        .gradient-under
-        .info-card
-          h4 Karmic
-          p Mobile first money transfer
-        .gradient-over
-
-    .row
-      a.project-hero.project-hero--orchid.col-xs-24.col-md-12(href="/orchid.html" style="overflow: hidden;")
-        img(src="/img/home/orchid-home.png")
-        .gradient-under
-        .info-card
-          h4 Orchid
-          p Personal spending data visualization
-        .gradient-over
-
-      a.project-hero.project-hero--hex2sketch.col-xs-24.col-md-12(href="/hex2sketch.html" style="overflow: hidden;")
-        img(src="/img/home/hex2sketch-home.png")
-        .gradient-under
-        .info-card
-          h4 Hex 2 Sketch
-          p Turn web colors into sketch palettes
-        .gradient-over
-
-    .row
-      a.project-hero.project-hero--palace.col-xs-24.col-md-12(href="/palace.html" style="overflow: hidden;")
-        img(src="/img/home/palace-home.png")
-        .gradient-under
-        .info-card
-          h4 Palace
-          p Internet of Things control dashboard
-        .gradient-over
-
-      a.project-hero.project-hero--animatik.col-xs-24.col-md-12(href="/animatik.html" style="overflow: hidden;")
-        img(src="/img/home/animatik-home.png")
-        .gradient-under
-        .info-card
-          h4 Animatik
-          p Social media / photo editing
-        .gradient-over
+            //- https://www.levels.fyi/?compare=Facebook,Google,Uber,Amazon&track=Product%20Designer

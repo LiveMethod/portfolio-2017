@@ -10,10 +10,20 @@ html
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
 
   body
-    #wrapper
-      nav.nav--rail
-        h3.nav__title Rick Steele
-        h5.nav__subtitle Design Systems Technologist
+    #content
+      
+      nav#rail
+        a.project-hero(href="/" style="overflow: hidden;")
+          img(src="/img/home/fpo-thumb.png")
+          .gradient-under
+          .info-card
+            h4 About
+            //- p Design systems technologist
+          .gradient-over
+        //- h1.nav__title Rick Steele
+        //- h5.nav__subtitle Design Systems Technologist
+        a.btn.btn-success.btn-lg.btn-block Available for hire. Let's talk.
+        h4.nav__title Case Studies
         a.project-hero.project-hero--adobe(href="/adobe.html" style="overflow: hidden;")
           img(src="/img/home/adobe-thumb.png")
           .gradient-under
@@ -59,6 +69,7 @@ html
             h4 Hex 2 Sketch
             p Turn web colors into sketch palettes
           .gradient-over
+        
+        h4.nav__title Personal Projects
 
-      #content
-        block content
+      block content
