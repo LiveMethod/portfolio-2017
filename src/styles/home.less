@@ -1,43 +1,80 @@
-@home-button-color: #FF007B;
-
 //====================
 // Home Page - Intro Quote
 //====================
 
-.container--home{
-  background-color: @home-background;
-}
-
 .intro-quote{
-  padding: 100px 0;
+  padding: 110px 0 80px;
   text-align: center;
 
   @media (min-width: @screen-sm ){
-    padding: 160px 0;
+    padding: 140px 0 20px;
   }
   h1 {
     color: #FFFFFF;
     font-weight: 900;
     
-    font-size: 100px;
-    line-height: 100px;
-    letter-spacing: 5px;
+    font-size: 85px;
+    line-height: 90px;
+    letter-spacing: 0.05em;
+
+    @media (min-width: @screen-sm ){
+      font-size: 100px;
+      line-height: 100px;
+      // letter-spacing: 0.05em;
+    }
   }
 
   h2{
     font-weight: 300;
     font-size: 36px;
     color: #4C6571;
-    font-size: 28px;
-    line-height: 33px;
+    font-size: 31px;
+    line-height: 36px;
     margin-top: 0px;
 
-    @media (min-width: @screen-sm ){  
+    @media (min-width: @screen-md ){  
       font-size: 40px;
       line-height: 50px;
     }
   }
 
-  
+  ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      padding: 4px 16px 0;
+      font-weight: 200;
+      letter-spacing: 0.02em;
+    }
+  }
 }
 
+.card.card--hire{
+    padding: 32px 54px 50px;
+    max-width: 580px;
+    margin: @gap-xs @gap-xs 0;
+
+    @media (min-width: @screen-sm) {
+      padding: 50px 80px 64px;
+      margin: 80px auto;
+    }
+
+    @media (min-width: @screen-md) {
+      margin: 80px auto;
+    }
+
+    @media (min-width: @screen-xl) {
+      margin: 100px  auto;
+    }
+    
+    
+    p{
+      margin-bottom: 16px;
+    }
+  }

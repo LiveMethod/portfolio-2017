@@ -1,0 +1,71 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Rick Steele | Design Systems Technologist
+    link(rel="stylesheet" href="/styles/portfolio.css")
+    link(rel="icon" type="image/x-icon" href="/img/favicon.ico")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+
+    script.
+      /////////////////////////////////
+      // shrinky header (h/t tom durkin)
+      /////////////////////////////////
+      $(document).on("scroll", function(){
+        if
+          ($(document).scrollTop() > 100){
+          $("nav").addClass("nav--slim");
+        }
+        else
+        {
+          $("nav").removeClass("nav--slim");
+        }
+      });
+      
+      /////////////////////////////////
+      // footer selection
+      /////////////////////////////////
+      // Only show the footer nav if we're on a project page,
+      // as determined by whether the url slug matches a project name
+
+      $(document).ready(function(){
+
+        //- hide footer by default
+        $('footer').hide();
+        
+        var project = window.location.pathname.split('.')[0].replace(/[^A-Za-z0-9\s!?]/g,'');
+
+        if(project.length < 3){
+          project = undefined;
+        }
+        console.log(project);
+
+        $('footer .project-hero').each( function(){
+          var classes = $(this).attr('class');
+          if( classes.indexOf(project) >= 0){
+            $('footer').show();
+            // add selection styles
+          }
+        });
+
+        //- On the about page, show projects but hide hiring panel,
+        //- since it just links to the about page anyway.
+        if(project == 'about'){
+          $('footer').show();
+          $('.card--hire')
+            .css('visibility', 'hidden')
+            //- Set the spacing right
+            .parent().css('height', '12px');
+
+        }
+      });
+  body
+    .ultrawide-background-shadow
+    .container-fluid
+      nav.nav--index
+        a.nav__entry(href="/index.html")
+          h3.nav__title Rick Steele
+          h5.nav__subtitle Design Technologist
+    block body

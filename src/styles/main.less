@@ -10,43 +10,14 @@
 }
 
 //====================
-// Bootstrap Overrides
-//====================
-
-@grid-columns: 24;
-@grid-gutter-width: 0px;
-@max-content-width: 1100px;
-
-// Width of the sidebar. Abstracted here because it's
-// used by both the rail itself and the spacer in the 
-// content sections.
-@rail-width-xs: 100%;
-@rail-width-sm: @rail-width-xs;
-@rail-width-md: 260px;
-@rail-width-lg: 360px;
-@rail-width-xl: @rail-width-lg + 40px;
-
-@heading-text: #173A4A; //#091520;
-@heading-weight: 700;
-@body-text: #6A8693;
-@strong-text: #173A4A;
-@border-radius: 8px;
-
-@footer-height: 120px;
-
-
-@home-background: #061a2f;
-@home-card-margin: 8px;
-@cyan: #00B1FE;
-
-
-//====================
 // Imports
 //====================
 
+@import "./variables";
 @import "./nav";
 @import "./type";
 @import "./home";
+@import "./project-hero";
 @import "./footer";
 @import "./utils";
 @import "./google";
@@ -56,11 +27,35 @@
 //====================
 
 body{
+  // Checkerboard
+  background: @checker-light;
+  background-image:
+    linear-gradient(45deg, @checker-dark 25%, transparent 25%), 
+    linear-gradient(135deg, @checker-dark 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, @checker-dark 75%),
+    linear-gradient(135deg, transparent 75%, @checker-dark 75%);
+  background-size:25px 25px; /* Must be a square */
+  background-position:0 0, 12.5px 0, 12.5px -12.5px, 0px 12.5px; /* Must be half of one side of the square */
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
   -webkit-transition: padding 0.2s ease-in-out;
   -moz-transition: padding 0.2s ease-in-out;
+  min-height: 100vh;
 
+  // This padding in lieu of the one under the project stack to show
+  // checker on XL
+  @media (min-width: @screen-xl ){
+    padding-bottom: 40px;
+  }
+}
+
+.container-fluid {
+  background: @home-background;
+  width: 100%;
+  max-width: @max-content-width;
+  position: relative;
 }
 
 // Section tags are used for full-width sections that contain bootstrap rows,
@@ -71,29 +66,10 @@ section {
   justify-content: center;
   width: 100%;
 
-  @media (min-width: @screen-sm){
-    padding:16px;
-  }
+  padding: 0;
 
-  // MD and forward (when the rail is a rail and not fullscreen)
-  // pad the content area so the fixed rail can fit.
-  @media (min-width: @screen-md){
-    padding:16px;
-    padding-left: @rail-width-md + 16px;
-  }
-  @media (min-width: @screen-lg){
-    padding:40px;
-    padding-left: @rail-width-lg + 40px;
-  }
-
-  &.dark{ background: @home-background; }
-  &.midlight{ background: #dbe7ec; }
-
-  >.container-fluid {
-    overflow: visible;
-    max-width: @max-content-width;
-    // >.row, >.panel{
-    // }
+  & > .container-fluid {
+    padding-top: 60px;
   }
 }
 
@@ -104,12 +80,16 @@ section {
   }
 }
 
+// Helps keep loads pretty, so there's no flash of navy before content
+#page .container-fluid{
+  background: white;
+}
+
 #content{
   flex: 1;
-  @media (min-width: @screen-md){
-    overflow: hidden;
-    
-  }
+  overflow: hidden;
+  position:relative;
+  z-index: 2; // float above XL page shadow, etc.
 
   -webkit-transition: width 0.2s ease-in-out;
   -moz-transition: width 0.2s ease-in-out;
@@ -119,7 +99,7 @@ section {
 .default-text{
   background: white;
   position: relative;
-  padding: 60px 0;
+  padding: 60px 60px;
   margin: 0 auto;
 
   >*{
@@ -409,4 +389,23 @@ section {
 
 .remitly-new-pattern-desc {
   padding-top: 160px;
+}
+
+// A rect with the dimensions of
+// the entire page that exists behind
+// content in XL mode. This lets us
+// attach a shadow.
+.ultrawide-background-shadow {
+  display: none;
+  @media (min-width: @screen-xl ){
+    display: block;
+    position: fixed;
+    width: @max-content-width;
+    top: 0;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-@bottom-gap);
+    box-shadow: 0px 0px 80px 0px rgba(188, 189, 191, 0.7);
+    
+  }
 }

@@ -1,4 +1,4 @@
-extends ./_rail-layout.pug
+extends ./_template_page
 
 block content
   section
@@ -16,21 +16,9 @@ block content
 
           p The new design system helped us keep a consistent execution across multiple corridors with customized experiences based on cultural and regulatory expectations, while also serving as a platform for quickly testing variations on the product, scaling to accomodate a complex fintech product with <strong>over $7 billion in annual throughput</strong>.
 
-      //-------------------------------- 
-      //-------------------------------- 
-      //-------------------------------- 
-      .spacer
-      //-------------------------------- 
-      //-------------------------------- 
-      //-------------------------------- 
-
-      .row.hidden-xl.hidden-lg
-        .default-text.round-top-sm
-          h2.text-center A new design system from the ground up.
-
-          //- Existing brand widget
+      //- Existing brand widget
       .panel.panel--remitly-pale.round-bottom-sm.round-lg
-        .row
+        .row(style="padding:0 16px")
           .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow(style="background-color:white; padding: 80px 0; overflow: hidden;")
             .col-xs-18.col-xs-offset-3.col-xl-7.col-xl-offset-2.md-vertical-center(style="padding-bottom: 20px;")
               h4(style="color: #FF3F00; margin-bottom: 0;") Context
@@ -45,10 +33,13 @@ block content
 
   section
     .container-fluid
+      .row.hidden-xl.hidden-lg
+          .default-text.round-top-sm
+            h2.text-center A new design system from the ground up.
       .row.visible-xl
         .default-text.round-top-xl
           h2 Color
-          p The UI environment is demanding of colors that are less welcome in marketing materials. Yellows become browns for contrast and readability purposes. Hover states mean additional shaded / tinted versions of things. The product design color palette took the original marketing palette and filled in the gaps for performance in a broader set of environments.
+          p The UI environment is demanding of colors that are less welcome in marketing materials. Yellows become browns for contrast and readability purposes. Hover states mean additional shaded / tinted versions of things. The product design color palette took the original marketing palette and filled in the gaps for performance in any situation.
       
       //- Desktop version
       .hidden-xs.panel.panel--remitly-pale.round-top-sm
@@ -115,7 +106,7 @@ block content
           h2 Typography
           p The goal of the type stack was to have a top end that was bold enough for marketing heros, and a bottom end that was robust enough for legal documents with multiple levels of headings. We borrowed an abstraction from bootstrap and extended the headings with two Display sizes that enhanced the h1 while keeping the h1s themselves at a sane size.
 
-  section(style="background: #f3f4f7")
+  section
     .container-fluid
       .row
         .default-text
@@ -123,42 +114,36 @@ block content
 
           p With the core tokens of the design system in place, generalized buttons and form elements were the next step.
       
-      //- Desktop version
-      .hidden-xs(style="background: #ffffff")
+      .hidden-xs.panel.panel--remitly-pale.text-center
         .row
-          .card.card--m-b.text-center
-            img(src="/img/remitly/remitly_toggles.png", style="width: 80%;")
+          .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card.card--m-b
+              .col-xs-14.col-xs-offset-5
+                img(src="/img/remitly/remitly_toggles.png", style="width: 100%;")
         .row
-          .card.card--m-b
-            img(src="/img/remitly/remitly_buttons.png", style="width: 100%;")
+          .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card.card--m-b
+              img(src="/img/remitly/remitly_buttons.png", style="width: 100%; max-width: 800px;")
         .row
-          .card
-            img(src="/img/remitly/remitly_form_alerts.png", style="width: 100%;")
+          .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card.card--m-b
+                img(src="/img/remitly/remitly_form_alerts.png", style="width: 100%; max-width: 800px;")
         .row
-          .card.card--m-b
-            img(src="/img/remitly/remitly_system_alerts.png", style="width: 100%;")
-        .row(style="background: #f3f4f7")
-          .card(style="background: none")
-            img(src="/img/remitly/remitly_mobile_screens.png", style="width: 100%;")
+          .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card
+                img(src="/img/remitly/remitly_system_alerts.png", style="width: 100%;")
 
-      //- Mobile version
-      .visible-xs.panel.panel--remitly-pale
-        .row
-          .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
-            img(src="/img/remitly/remitly_buttons.png", style="width: 100%;")
-        .row
-          .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
-            .col-xs-14.col-xs-offset-5
-              img(src="/img/remitly/remitly_toggles.png", style="width: 100%;")
-        .row
-          .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
-              img(src="/img/remitly/remitly_form_alerts.png", style="width: 100%;")
-        .row
-          .col-xs-22.col-xs-offset-1.shadow.card
-              img(src="/img/remitly/remitly_system_alerts.png", style="width: 100%;")
-        .row
-          .col-xs-22.col-xs-offset-1.col-lg-20.col-lg-offset-2
-            img(src="/img/remitly/remitly_mobile_screens.png", style="width: 100%; margin-top:40px")
+        //- Mobile version
+        .visible-xs.panel.panel--remitly-pale
+          .row
+            .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
+              img(src="/img/remitly/remitly_buttons.png", style="width: 100%;")
+          .row
+            .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
+              .col-xs-14.col-xs-offset-5
+                img(src="/img/remitly/remitly_toggles.png", style="width: 100%;")
+          .row
+            .col-xs-22.col-xs-offset-1.shadow.card.card--m-b
+                img(src="/img/remitly/remitly_form_alerts.png", style="width: 100%;")
+          .row
+            .col-xs-22.col-xs-offset-1.shadow.card
+                img(src="/img/remitly/remitly_system_alerts.png", style="width: 100%;")
 
   section
     .container-fluid
@@ -234,7 +219,7 @@ block content
           .default-text(style="background:none")
             hr(style="margin: 0 auto;")
 
-        
+        //- Ultrawide version
         .row.visible-xl
           .col-lg-4.col-lg-offset-1.text-right.remitly-new-pattern-desc
             p
@@ -253,7 +238,8 @@ block content
             p Label information intact during editing.
             p Critical extra data (date formats, password requrements, etc) can also be kept intact with help text.
 
-        .row.hidden-xl
+        //- SM through LG version
+        .row.hidden-xl.hidden-xs
           .col-xs-9.col-xs-offset-2.col-md-8.col-md-offset-3
             img(src="/img/remitly/remitly_compare_old.png", style="width: 100%;")
             p &nbsp; 
@@ -270,6 +256,27 @@ block content
             p Errors can easily be displayed inline at an appropriate granularity. Support for feedback about multiple errors at once.
             p Label information intact during editing.
             p Critical extra data (date formats, password requrements, etc) can also be kept intact with help text.
+
+        //- XS mobile version
+        .row.visible-xs
+          .col-xs-20.col-xs-offset-2
+            img(src="/img/remitly/remitly_compare_old.png", style="width: 100%;")
+            p &nbsp; 
+            p
+              strong Previous patterns
+            p One-size-fits-all errors stacked in a top tray because red-on-navy made inline errors impractical. 
+            p Requires resolving error 1 to see additional errors
+            p Placeholders as labels - field information is lost during editing.
+            hr
+        .row.visible-xs
+          .col-xs-20.col-xs-offset-2
+            img(src="/img/remitly/remitly_compare_new.png", style="width: 100%;")
+            p &nbsp; 
+            p
+              strong Revised patterns
+            p Errors can easily be displayed inline at an appropriate granularity. Support for feedback about multiple errors at once.
+            p Label information intact during editing.
+            p Critical extra data (date formats, password requrements, etc) can also be kept intact with help text.
     
   section
     .container-fluid
@@ -279,12 +286,12 @@ block content
 
           p Onboarding is a difficult but critical step for financial applications. A multitude of empty states helped users familiarize themselves with the UI before the system was populated with their information. Some states are purely informational, and some have calls to action at various levels of intensity.
 
-      .panel.panel--remitly-pale.round-bottom-sm
-        .row
+      .panel.panel--remitly-pale
+        .row(style="padding:0 16px")
           .col-sm-20.col-sm-offset-2.col-md-18.col-md-offset-3.shadow.card
               img(src="/img/remitly/remitly_empty_states.png", style="width: 100%;")
   
-  section(style="background: #1b304f")
+  section
     .container-fluid
       .row
         .default-text

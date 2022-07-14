@@ -1,0 +1,235 @@
+
+.project-stack{
+  max-width: @max-content-width;
+  @media (min-width: @screen-md ){
+    padding: @project-gap-tight;
+    padding-bottom: @bottom-gap;
+  }
+
+  // Background color padding goes away on XL to reveal checker
+  // The ultrawide shadow has a translateY to match this.
+  @media (min-width: @screen-xl ){
+    padding-bottom: @project-gap-tight;
+  }
+}
+
+// Bootstrap sizing for the footer
+footer .project-hero {
+  .make-xs-column(24);
+  .make-sm-column(12);
+  .make-md-column(8);
+
+  // This needs to be redeclared here
+  // because the make-x-column fns reset it
+  padding: @project-gap-tight;
+
+  .info-card{
+    padding: 16px;
+
+    h4{
+      font-size: 24px;
+      margin: 0;
+    }
+
+    p{
+      font-size: 16px;
+    }
+  } 
+}
+
+//====================
+// Project Thumbnail Cards
+//====================
+
+.project-hero{
+
+  .make-xs-column(24);
+  .make-md-column(12);
+  .make-xl-column(8);
+  
+  padding: @project-gap-tight;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  
+  padding: @gap-sm/2;
+
+  // @media (min-width: @screen-lg){
+  //   padding: @gap-lg/2;
+  // }
+
+  img{ width: 100%; }
+
+  & > * {
+    transition: all 0.15s ease;
+  }
+
+  .gradient{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: @gap-sm/2;
+
+    // @media (min-width: @screen-lg){
+    //   margin: @gap-lg/2;
+    // }
+
+    &--over{
+      opacity: 0.6;
+      top: 50%;
+    }
+    &--under{
+      opacity: 0.2;
+    }
+  }
+  
+
+  .info-card{
+    background-color: #001224;
+    padding: 12px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    opacity: 0.85;
+
+    @media (min-width: @screen-lg){
+      margin: 16px;
+    }
+
+    h4{
+      font-size: 32px;
+      color: #FFFFFF;
+    }
+
+    p{
+      margin: 0;
+      padding: 0;
+      color: #FFFFFF;
+      line-height: 1.2em;
+    }
+
+    @media (min-width: @screen-md){
+      h4{
+        font-size: 20px;
+        margin-top: 2px;
+        margin-bottom: 4px;
+      }
+      p{ 
+        font-size: 17px;
+      }
+    }
+  }
+  &:hover{
+    .gradient--over{ opacity: 0; }
+    .gradient--under{ opacity: 1; }
+    .info-card{ 
+      opacity: 1;
+      bottom: 24px;
+    }
+  }
+
+  //====================
+  // Branded elements
+  //====================
+
+   &--adobe{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(129, 214, 255, 0.6) 0%, #466fbd 100%)
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(0, 59, 115, 0) 0%, #005486 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(79, 109, 198, 0.36), 0 6px 19px 0 #001224;
+    }
+  }
+
+   &--passbook{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(65, 113, 128, 0.6) 0%, #1d2729 100%);
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(0,59,115,0.00) 0%, #1d2729 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(0,62,118,0.36), 0 6px 19px 0 #1d2729;
+    }
+  }
+
+  &--remitly{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(41,142,201,0.60) 0%, #205893 100%);
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(0,59,115,0.00) 0%, #003A7C 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(0,62,118,0.36), 0 6px 19px 0 #003A72;
+    }
+  }
+
+  &--karmic{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(4,131,186,0.60) 0%, #0386C0 100%);
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(4,131,186,0.00) 0%, #0386C0 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(0,62,118,0.36), 0 6px 19px 0 #003A72;
+    }
+  }
+
+  &--orchid{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(46,48,97,0.70) 1%, #5003C0 100%);
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(63,4,186,0.00) 0%, #5003C0 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(62,0,118,0.36), 0 6px 19px 0 #230072;
+    }
+  }
+
+  &--hex2sketch{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(147,147,147,0.60) 0%, #5D5D5D 100%);
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(165,165,165,0.00) 0%, #000000 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(68,62,57,0.36), 0 6px 19px 0 #3E3833;
+    }
+  }
+
+  &--palace{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(29,37,39,0.60) 0%, #1D2527 100%);
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(76,75,76,0.00) 0%, #141414 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(36,36,36,0.36), 0 6px 19px 0 #000000;
+    }
+  }
+
+  &--animatik{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(254,15,3,0.60) 0%, #FE0E02 100%);
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(186,4,4,0.00) 0%, #C00303 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(199,2,2,0.36), 0 6px 19px 0 #4F1212;
+    }
+  }
+}
