@@ -3,12 +3,100 @@ extends ./_template_page
 block content
   section
     .container-fluid
+      //- .row.panel.panel--passbook-intro
+      //-   .default-text.round-xs(style="background:none;")
+      //-     h1 Passbook
+      //-     h2.visible-lg.visible-xl Mobile lending
+      .row.panel.panel--flush
+        img.col-xs-24(src="/img/passbook/pb-maria-hero.jpg")
+      
       .panel
         .row
-          .default-text(style="padding-bottom: 0;")
-            h1.text-center Text
-            p.text-center Subtext
+          .default-text
+            h1.text-center Passbook
+            p.text-center Mobile lending workflows
+            hr
+            h2 Context
+            p Passbook is a mobile banking app with a focus on helping a traditionally underserved demographic work towards financial freedom. It offers cards and accounts with first-class support for Spanish, and without requiring a social security number, which deters some immigrants from engaging with the banking system.
+            p I worked with Passbook as the owner of product design for Cash Boost, a lending product that lets users borrow small sums of money with favorable terms to assist with unexpected bills and other short-term cashflow issues.
+            ul
+              li Mobile first
+              li Worked with compliance & product. Good two way collab – the business side was willing to modify the underlying product / how underwriting was done to simplify the UX.
+              li Bilingual
+              li Time and states. We allow early payback, etc. Plus markers for paid, overdue, etc.
+
+      .row.panel.panel--passbook-dark
+        img.visible-xs.visible-sm.col-xs-22.col-xs-offset-1.col-sm-18.col-sm-offset-3(src="/img/passbook/pb-scope-mobile.png")
+        img.hidden-xs.hidden-sm.col-md-18.col-md-offset-3.col-lg-16.col-lg-offset-4.col-xl-14.col-xl-offset-5(src="/img/passbook/pb-scope-desktop.png")
+      
       .row
         .default-text
-          h2 Context
-          p More text
+          h2 Home screen pill
+          p This was an isolated beta feature, and the scope prohibited sweeping changes to the core menu IA. A badge underneath the account balance serves as both a reminder that the feature exists, as well as an entrypoint into that part of the app.
+          p Callouts here: Active vs inactive, max vs abstract, being nice to tier zero
+      .row
+        .default-text
+          h2 Context-aware onboarding
+          p Many of Passbook's customers are traditionally unbanked, so mobile lending can be a new concept. The first onboarding screen aims to assuage a number of customer-specific anxieties: that they'll be ripped off by exorbitant fees, or that the account will require credit or citizenship data that may be missing.
+          
+          p When an account is eligible to lend right away, the graphic highlights where they are, while also showing the levels that can become available later.
+          p When a borrower is declined, we spare them the congrats, and can still use the graphic to show what's possible in the future.
+          p PMs were eager for a "tap to see how much you can get" feature, but when we know they're not going to be approved, that's just mean. So it's swipe-to-continue in that case, to avoid setting false expectations.
+
+      .row
+        .default-text
+          h2 Feature home
+          p Opens with the borrow limit and a CTA for using it. When the borrow limit is zero, it falls back to a message explaining how to get approved.
+
+          h2 Level Up Widget
+          p This UI attempts to simplify a complex underwriting model, which takes into consideration the amount, the type, and cadence of recent deposits. Milestones turn green as they're achieved, and there are CTAs for actions like setting up direct deposit. These are subdued relative to the primary CTA for actually using the feature.
+
+          h2 Alternates
+          p We iterated through a few options, including ones that reincorporated the onboarding graphics.
+          p Despite the various treatments, this section stayed extremely information-dense. Because it mirrors the loan's underwriting model, the only way to shrink it is to omit critical information. Or.... simplify the underwriting. Props to Passbook for being willing to entertain this: these exercises convinced them to alter the way this corner of the business categorizes loans, in order to be more comprehensible to their customers.
+      .row
+        .default-text
+          h2 Amount selection
+          p We did a million versions of this. It's a bedrock interaction and we wanted it to feel really nice. This type of screen – with large display text, tons of white space, more custom UI elements – was unlike anything else in the app at the time, so the discovery process for this area was done with an eye for what would generalize well and could live on as a reusable part of Passbook's design language.
+          p A million screens here.
+          p It's both tappable and draggable.
+          p Haptic feedback is considered.
+          p Arrows gray out when you hit the top, wrap around at the bottom.
+          p Bottom text is partly in response to regulatory and transparency requirements – customers are entitled to understand the loan, the fees, and the total amount as distinct numbers.
+          p There's also more on this UI later – how we adapted it to show promotions, discounts, etc.
+      .row
+        .default-text
+          h2 Autopay vs manual
+          p PM was eager to both auto select autopay, and to make the wording for manual payment sound scarier, with language about "falling behind". In review, I pushed for a more ethical phrasing that 
+      .row
+        .default-text
+          h2 Aside: Customer understanding of fees and APR
+          h3 Or: why user testing matters.
+          p An example of when trying to do the right thing goes a bit askew. We originally had both fees and APR here – for example, a $2.80 fee amounts to a 33% APR (if annualized, rather than over a 2 week period). We surfaced this information as both a dollar amount and a percentage, but during user testing we repeatedly ran into issues where customers perceived these as two separate charges, and the response wasn't positive.
+          p In future iterations, we combined this into a single line item to make it clear the two pieces of data were describing the same charge.
+      .row
+        .default-text
+          h2 Confirmation CTA
+          p Immediate confirmation, confetti and all, that money had arrived.
+          p CTAs for related services, to immediately put the loan to use.
+      .row
+        .default-text
+          h2 Current loan card
+          p When a loan has already been taken out, the pill updates, the main balance/CTA is disabled, and a card appears with an overview of the active loan.
+          p There are indicators for key information like whether autopay is on, the size of the next payment, and when it's due.
+
+          h2 Current loan detail page
+          p Progress bar for payments, whether they're made, when they're due, etc.
+          p 
+          p The details tab shows the same cost breakdwn that was present during checkout, and the history view shows details about previous payments, extensions, etc.
+      .row
+        .default-text
+          h2 Also in spanish
+          p We prototyped a bilingual version this in figma, so that we could test it with both userbases, and to make sure that the designs were able scale well to spanish.
+
+      .row
+        .default-text
+          h2 User testing
+          p Bilingual user tests
+          p Dupilcate testing at each tier, gauging reactions to favorable and unfavorable lending conditions. (EG, what happens when we reject you)
+      

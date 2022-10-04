@@ -5,10 +5,64 @@ block content
     .container-fluid
       .panel
         .row
-          .default-text(style="padding-bottom: 0;")
-            h1.text-center Text
-            p.text-center Subtext
+          .default-text
+            h1.text-center Adobe Spectrum
+            p.text-center Design systems at scale
+            hr
       .row
         .default-text
+          .alert.alert-info
+            h4 Note:
+            p I'm under NDA for a lot of this stuff, which puts limits on what can be shown. Please forgive the lack of screenshots and code samples.
+          
           h2 Context
-          p More text
+          p I joined the Adobe Spectrum team as a hybrid designer/developer to help scale the design system, which – although large by most standards – was still very early in terms of the team's multi-year vision.
+
+          hr
+
+          h1 Spectrum SVG
+          //- Card view here?
+          p One of my first large projects was the takeover of Spectrum's SVG implementation, which is used to generate <a href="https://spectrum.adobe.com/page/ui-kits/">UI kits</a> and the <a href="https://spectrum.adobe.com/page/spectrum-xd-plugin/">Spectrum XD Plugin</a>.
+          p The (Javascript) codebase consistened of three parts: 
+          ul
+            li An SVG primitives library (with classes for rects, text, and similar).
+            li Definitions/implementations for each component in the design system, outlining parameters and presentation logic.
+            li UI Kits – examples of a component in various configurations.
+          p This separation of concerns was effective for maintenance: 
+          ul
+            li The underlying primitive library almost never changed
+            li Implementation for a given component was typically in a single file and easy to inspect
+            li UI Kits had the feel of a config file, making the examples easy to tweak without digging into the headier parts of the codebase. This was perfect, since the content of the UI kits was subject to frequent, small changes based on things like evolving content strategy guidelines or the addition of new icons.
+          
+          hr
+
+          h2 Modernizing
+          p The early verisons of this codebase came from my manager, who had a background in enterprise C. This led to some peculiar imbalances. The codebase organization and underlying design patterns were very solid, and it remains one of the more intersting JS codebases I've worked on. However, there were also some improvements to be made in terms of idiomatic JS and web development best practices.
+          
+          //- These should become H4s that are smaller. All H4s on the rst of the site should become H5s or have the CSS only make them tiny when in cards. Current H4 is way too small.
+          h3 Dropbox to Github
+          p When I joined Adobe, this codebase lived in the design team's Dropbox folder. My very first move was to slam the brakes and immediately move it to source control.
+          h3 Build system
+          p The incumbent codebase had a gigantic stack of script tags importing various things manually, including core logic stored in the index file. This added friction to dependency tracking, load order, etc. The editing process involved tweaking files and reloading the index. I moved to modular JS and more automatic build processes.
+          h3 Browser UI
+          p The first version had no interface: the only way to change the page content was to edit the underlying code and refresh. I built a UI that exposed the various components so that non-developers could self-serve any content they wanted. These changes – scraping and exposing all components, etc – laid the groundwork for more advanced automation down the line.
+
+          h2 Automating A11Y Checks
+          p The spectrum design system aims to be WCAG (2.0) compliant. These compliance efforts are baked into the foundations, with a color system that's designed to provide sufficient contrast between steps so that things "just work". Designers further confirm WCAG compliance when a component first enters the design system. After that, however, there wasn't much inspection, and the ever-changing nature of component updates meant inconsistencies could slip through the cracks. There are a handful of tools for measuring this stuff on traditional HTML nodes, post-render. We wanted to verify the instruction set, <em>pre-render</em>, in addition to the rendered artifacts.
+          h3 A11Y SVG library
+          p I built a library that integrated with our JS/SVG component definitions, recording and annotating each created node's WCAG categorization (WCAG has separate delineations for small and large text, icons, backgrounds, etc). This information let us analyze the relationship between parts of a component, apply WCAG's ranking system, and generate a number of reports.
+          h3 Console / debug
+          p As each relationship was tested, the results could write to the console log, alongside a simple representation of the element itself – showing the foreground and background colors. This was extraordinarily useful because the console summary – which displayed what the library received in terms of color tokens – highlighted when the incoming data was wrong, rather than the artifact being wrong. If the apppearance of the preview in the console looked nothing like the real render, we knew it was a data integrity problem and not an issue with the actual design system.
+          h3 Exported raw data
+          p Raw data was available in CSV and JSON format, with tons of metadata columns for things like the color theme, size, and particular variation of each element. This made it easy to filter to only a specific subset of the design sytem, or go spelunking for a specific piece of information.
+          p The CSV table also ported well to Dropbox Paper for team discussion and task tracking. With the information in this format, it was easy for designers and PMs to track tasks and see what needed attention.
+          h3 Results and cost savings
+          p By some <em>very</em> conservative estimates – imagining that labor costs $50/hr and a component takes 30 seconds to analyze – this software does between $6k and $20k of human labor <em>every time it runs</em>. That estimate was at launch time, roughly in 2018. The design system is even bigger now, so the value of this automation rises with time.
+          p There's also strategic value to the design system's implementation teams and other downstream customers: CSS, react, etc. The more robust our testing became, the easier it was for our inetrnal customers to tell whether an A11Y issue arose from how they had implemented a component, or if they'd correctly built something with a flawed spec.
+
+          hr
+
+          h1 Design Token Tooling
+          p My work with our SVG implementation left me with a deep knowledge of how our design tokens were used, but more importantly, it imparted first-hand experience about where the pain points, inadequacies, and tedious bits were hidden when maintaining a design system at Adobe's scale.
+          p 
+          h2 Token search engine
