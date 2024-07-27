@@ -10,6 +10,7 @@
     "static": "cp -r ./src/fonts ./dist && cp -r ./src/img ./dist && cp -r ./src/js ./dist",
     "build": "mkdir -p dist && yarn pug && yarn less && yarn static",
     "serve": "cd ./dist && python3 -m http.server 8080",
+    "watch": "when-changed -r ./src yarn build",
     "dev": "yarn build && yarn serve"
   },
   "repository": {

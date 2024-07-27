@@ -1,16 +1,10 @@
 
 .project-stack{
   max-width: @max-content-width;
-  @media (min-width: @screen-md ){
-    padding: @project-gap-tight;
-    padding-bottom: @bottom-gap;
-  }
-
-  // Background color padding goes away on XL to reveal checker
-  // The ultrawide shadow has a translateY to match this.
-  @media (min-width: @screen-xl ){
-    padding-bottom: @project-gap-tight;
-  }
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // gap: 20px;
 }
 
 // Bootstrap sizing for the footer
@@ -21,20 +15,20 @@ footer .project-hero {
 
   // This needs to be redeclared here
   // because the make-x-column fns reset it
-  padding: @project-gap-tight;
+  padding: @project-gap/2;
 
-  .info-card{
-    padding: 16px;
+  // .info-card{
+  //   padding: 16px;
 
-    h4{
-      font-size: 24px;
-      margin: 0;
-    }
+  //   h4{
+  //     font-size: 24px;
+  //     margin: 0;
+  //   }
 
-    p{
-      font-size: 16px;
-    }
-  } 
+  //   p{
+  //     font-size: 16px;
+  //   }
+  // } 
 }
 
 //====================
@@ -45,23 +39,21 @@ footer .project-hero {
 
   .make-xs-column(24);
   .make-md-column(12);
-  .make-xl-column(8);
   
-  padding: @project-gap-tight;
   box-sizing: border-box;
   display: block;
   position: relative;
+  padding: @project-gap/2;
+
+  img{ width: 100%;}
+
+  .round{
+    border-radius: @project-radius;
+    overflow: hidden;
   
-  padding: @gap-sm/2;
-
-  // @media (min-width: @screen-lg){
-  //   padding: @gap-lg/2;
-  // }
-
-  img{ width: 100%; }
-
-  & > * {
-    transition: all 0.15s ease;
+    & > * {
+      transition: all 0.15s ease;
+    }
   }
 
   .gradient{
@@ -71,11 +63,8 @@ footer .project-hero {
     bottom: 0;
     left: 0;
     right: 0;
-    margin: @gap-sm/2;
-
-    // @media (min-width: @screen-lg){
-    //   margin: @gap-lg/2;
-    // }
+    margin: @project-gap/2;
+    border-radius: @project-radius;
 
     &--over{
       opacity: 0.6;
@@ -88,14 +77,26 @@ footer .project-hero {
   
 
   .info-card{
-    background-color: #001224;
-    padding: 12px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: @project-radius/2;
     box-sizing: border-box;
     position: absolute;
     bottom: 18px;
-    left: 18px;
-    right: 18px;
+    // left: 18px;
+    // right: 18px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 410px;
     opacity: 0.85;
+
+    .logo {
+      background: rgba(254,15,3,0.60);
+      display: none;
+      width: 150px;
+      height: 30px; 
+    }
 
     @media (min-width: @screen-lg){
       margin: 16px;
@@ -103,30 +104,32 @@ footer .project-hero {
 
     h4{
       font-size: 32px;
-      color: #FFFFFF;
+      line-height: 1.2em;
+      color: #2a2a2a;
     }
 
     p{
+      font-size: 17px;
+      line-height: 1.2em;
       margin: 0;
       padding: 0;
-      color: #FFFFFF;
-      line-height: 1.2em;
+      color: #444;
     }
 
-    @media (min-width: @screen-md){
-      h4{
-        font-size: 20px;
-        margin-top: 2px;
-        margin-bottom: 4px;
-      }
-      p{ 
-        font-size: 17px;
-      }
-    }
+    // @media (min-width: @screen-md){
+    //   h4{
+    //     font-size: 32px;
+    //     margin-top: 2px;
+    //     margin-bottom: 4px;
+    //   }
+    //   p{ 
+    //     font-size: 17px;
+    //   }
+    // }
   }
   &:hover{
     .gradient--over{ opacity: 0; }
-    .gradient--under{ opacity: 1; }
+    .gradient--under{ opacity: 0.5; }
     .info-card{ 
       opacity: 1;
       bottom: 24px;

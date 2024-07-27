@@ -2,8 +2,29 @@
 // Type
 //====================
 
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Italic.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+
 html, body{
-  font-family: 'Alegreya Sans', sans-serif;
+  font-family: 'NeueMontreal', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
 h1, .h1{
@@ -46,11 +67,10 @@ p, ol, ul{
 
   // mobile default
   font-size: 18px;
-  line-height: 26px;
+  line-height: 1.3em;
 
   @media (min-width: @screen-sm){
-    font-size: 21px;
-    line-height: 28px;
+    font-size: 20px;
   }
 
   a{
