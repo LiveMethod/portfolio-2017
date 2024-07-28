@@ -2,41 +2,28 @@
 // Type
 //====================
 
-@font-face {
-  font-family: "NeueMontreal";
-  src: url("/fonts/NeueMontreal-Bold.otf");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "NeueMontreal";
-  src: url("/fonts/NeueMontreal-Regular.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "NeueMontreal";
-  src: url("/fonts/NeueMontreal-Italic.otf");
-  font-weight: normal;
-  font-style: italic;
-}
-
 html, body{
-  font-family: 'NeueMontreal', sans-serif;
+  font-family: 'Alegreya Sans', sans-serif;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Alegreya Sans', sans-serif;
+  line-height: 1.05em;
+  letter-spacing: -0.02em;
+}
+
 
 h1, .h1{
   color: @heading-text;
   font-weight: @heading-weight;
   // default (mobile/xs) size
   font-size: 60px;
-  line-height: 64px;
   // SM and larger size
   @media (min-width: @screen-sm){
     font-size: 96px;
-    line-height: 105px;
   }
 }
 
@@ -44,21 +31,18 @@ h2, .h2{
   color: @heading-text;
   font-weight: @heading-weight;
   font-size: 40px;
-  line-height: 48px;
 }
 
 h3, .h3{
   color: @heading-text;
   font-weight: @heading-weight;
   font-size: 30px;
-  line-height: 36px;
 }
 
 h4, .h4{
   color: @heading-text;
   font-weight: @heading-weight;
   font-size: 20px;
-  line-height: 24px;
 }
 
 p, ol, ul{
