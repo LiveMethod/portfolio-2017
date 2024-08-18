@@ -51,7 +51,7 @@ footer .project-hero {
     border-radius: @project-radius;
 
     &--over{
-      opacity: 0.4;
+      opacity: 0.3;
       top: 50%;
     }
     &--under{
@@ -69,7 +69,7 @@ footer .project-hero {
     bottom: 18px;
     left: 18px;
     right: 18px;
-    opacity: 0.85;
+    opacity: 0.9;
 
     .logo {
       background: rgba(254,15,3,0.60);
@@ -124,7 +124,19 @@ footer .project-hero {
     }
   }
 
-   &--passbook{
+  &--samsara{
+    .gradient--under{
+      background-image: linear-gradient(-180deg, rgba(0, 157, 225, 0.3) 0%, #03b2fde9 100%);
+    }
+    .gradient--over{
+      background-image: linear-gradient(-180deg, rgba(4,131,186,0.00) 0%, #0386C0 100%);
+    }
+    .info-card{
+      box-shadow: 0 19px 51px 0 rgba(0,62,118,0.36), 0 6px 19px 0 #003A72;
+    }
+  }
+
+  &--passbook{
     .gradient--under{
       background-image: linear-gradient(-180deg, rgba(65, 113, 128, 0.6) 0%, #1d2729 100%);
     }
