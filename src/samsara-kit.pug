@@ -8,46 +8,33 @@ block content
 
       .row
         .default-text.default-text--round-bottom
-          h1.text-center Samsara's design system
+          h1.text-center Samsara
+          p.text-center Updating a legacy design system
           hr
           h2 Context
           p When Samsara approached me, their design system was badly out of date, having gone without maintenance for a number of years.
-          p The product surface area continued to expand during this time. Separate teams added competing versions of new components because cross-org visibility was limited. Components in Figma were implemented differently than mocked, and newly engineered components rarely made it back into Figma.
-          p As a younger and scrappier company, it made sense to accrue technical and design debt in exchange for rapid growth. But as Samsara matured, the need to scale operations elegantly meant that the time had come to pay down that debt and create order.
-          p I helped Samsara take inventory across a vast suite of product offerings, repairing their foundational styles and components to create a Figma library that was robust and highly configurable for IC designers, while staying tightly linked to easily maintainable subcomponents and abstractions under the hood.
-          p During this time, I worked closely with engineering to understand what was happening in their world, and ensure that our deliverables would be easy to build.
+          p Their product suite had continued to expand during this time. Separate teams added competing versions of new components because cross-org visibility was limited. Components in Figma were implemented differently than mocked, and newly engineered components rarely made it back into Figma.
+          p As a younger and scrappier company, it made sense to accrue technical and design debt in exchange for rapid growth. As Samsara matured, this inconsistency became costly. The now-larger company was competing for contracts in regulated sectors like state and federal government, where accessibility and UX execution were contractually required.
+          p I worked between the design and engineering orgs to help Samsara repair their foundational styles and components to create a Figma library that offered ease and configurability for everyday design tasks, while remaining deeply interconnected and maintainable under the hood.
           
           hr
-          h1 Foundations
-
-          h2 Color, contrast, compliance
-          p Core color palettes were uneven, overly large, and didn't take into account contrast ratios etc. I helped repair these, beginning with a contrast-based framework so that components could maintain accessibility as they moved between color palettes (as in positive/negative alerts) and themes (as in light/dark mode)
-
-          h3 Contrast-first approach
+          //- h1.text-center Building a Roadmap
+          h2 Identifying pain points
+          p My first step in a new environment is to take inventory: gathering feedback, reviewing what exists, and developing an intuition for the health and importance of various areas. This takes many forms: 
+          //- TODO: these styles are ugly. Need more vertical spacing and nicer bullets (dashes?)
+          //- TODO: these could be a 4-up of cute sketches/illustrations
           ul
-            li Unified number of swatches in each palette
-            li set contrast between steps to ensure that
-              ul
-                li there were enough swatches at the bottom for multiple backgrounds, alllowing for cards, wells, overlays, etc, while still meeting contrast reqs.
-                li the low mids were punchy enough to use for borders, visualizations, etc
-                li the high mids had enough entries to allow for resting, hover, and down states, and that these played well together, with enough change to be distinguishable, while still feeling fluid and not like backgrounds jumped too far between states
-                li the highs struck the right balance between saturated and pale, allowing for things like alert backgrounds where light tints don't overpower the content that sits on top of them.
-            li Built complementary palettes for dark mode that followed these same principles, and achieved equivalent contrast, while still being hand selected. Inverting the light mode palettes and calling them dark mode doesn't usually work, because the hues and saturations are no longer coupled to their use cases (backgrounds, borders, etc) in the same way, and because dark mode tends to be more subdued by design. Building the palettes in this way ensures that they share the same underlying principles, while each being tailor-made for their respective situations.
-
-
-          h3 Far-reaching stakeholders
-          p Since Samsara pursues contracts where accessibility compliance can be contractually significant, I kept Legal in the loop, conducting training and info sessions on A11Y and 508 compliance in general, as well as the specific steps that Samsara was taking, so that they could understand what clients and regulators were interested in, so that they could enter into those conversations well informed and ready to impress.
-          p [img: session testimonials]
-          hr
-          h1 Components
-          h2 Personas: maintainer vs consumer
-          p A note about the philosophy bit I mention below: purposefully shoulder complexity in the maintenance area
-          h2 States and variants
-          ul
-            li 1. Made sure that all component variants were present (eg warning button, not just regular) 
-            li 2. Made sure that each of these had all the states it needed, incorporating the foundations.
-            li Previously, these tended to be missing, and decisions hadn't been made about some of the lesser-seen variants, so it was a free for all in code.
-            li 3. Niceties such as
-            li — a. consolidating components that were needlessly forked. lots of things that could be one comopnent if you know how to build a figma component effectively.
-            li — b. taking full advantage of figma's component utils for things like boolean icon display and text customization. This is an example of a more general philosophy that I took towards the library: purposefully address and manage complexity as a design system maintainer, under the hood, so that the resulting components were easier to use and "just worked" as a design system consumer.
-          h2 Compound components
+            li Shadowing the design team through key meetings, crits, and handoffs.
+            li Interviewing designers about how they use the design system, what's working, and what's not.
+            li Getting a dev env running and reviewing the codebase with engineers.
+            li Meeting with PM and legal to understand their perspectives.
+          //- h2 Results
+          p As I learned more, the design system's pain points began to fall into two categories:
+          .col-xs-8
+            h4 Technical
+            p Issues with content and functionality: absence, brokenness, or lack of parity.
+          .col-xs-8
+            h4 Experiential
+            p Issues with using the design system: uncertainty, difficulty, and process.
+          
+          h2 Technical
