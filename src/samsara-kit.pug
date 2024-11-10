@@ -12,29 +12,52 @@ block content
           p.text-center Updating a legacy design system
           hr
           h2 Context
-          p When Samsara approached me, their design system was badly out of date, having gone without maintenance for a number of years.
+          p When Samsara approached me, their design system had been unmaintained for a number of years and was significantly out of date.
           p Their product suite had continued to expand during this time. Separate teams added competing versions of new components because cross-org visibility was limited. Components in Figma were implemented differently than mocked, and newly engineered components rarely made it back into Figma.
-          p As a younger and scrappier company, it made sense to accrue technical and design debt in exchange for rapid growth. As Samsara matured, this inconsistency became costly. The now-larger company was competing for contracts in regulated sectors like state and federal government, where accessibility and UX execution were contractually required.
-          p I worked between the design and engineering orgs to help Samsara repair their foundational styles and components to create a Figma library that offered ease and configurability for everyday design tasks, while remaining deeply interconnected and maintainable under the hood.
-          
+          p As a younger and scrappier company, it made sense to accrue technical and design debt in exchange for rapid growth. As Samsara matured, this inconsistency became costly. The now-larger company was competing for contracts in regulated sectors like state and federal government, which brought contractual obligations around accessibility. The design system needed to take these goals into consideration, and the resulting changes needed to generalize well across the entire product.
+          p I worked between the design and engineering orgs to help Samsara repair their foundational styles and components, creating a Figma library that was configurable, accessible, and maintainable.
+
           hr
-          //- h1.text-center Building a Roadmap
-          h2 Identifying pain points
-          p My first step in a new environment is to take inventory: gathering feedback, reviewing what exists, and developing an intuition for the health and importance of various areas. This takes many forms: 
-          //- TODO: these styles are ugly. Need more vertical spacing and nicer bullets (dashes?)
-          //- TODO: these could be a 4-up of cute sketches/illustrations
+
+          h2 Roadmap
+          p After taking inventory of the situation, shadowing the design team, and meeting with stakeholders across the org, I developed a two-track roadmap. Track A had us get started immediately on things we already knew were important. Simultaneously, track B would provide data on where to focus our efforts as the obvious projects were exhausted.
+      .row.panel.panel--karmic-snapchat
+      .row
+        .default-text.default-text--round-bottom
+
+          h1 Color & Contrast
+          p The existing color system used palettes of different sizes, with more grays than blues, more blues than reds, and so on. These values had grown on an as-needed basis, and didn't consider how contrast changed between steps, or whether that contrast was consistent across the various color palettes.
+
+          h3 A11Y Focus: Contrast-Driven Palette Development
+          p When building a color system, I'm looking to balance a few different goals:
+          p 
+            strong Per-step contrast: 
+            br
+            | Every step in the palette should have enough contrast to make a one-increment change discernable, but not jarring. I like to test this with button hover and down states. Too little contrast and you can't tell that a change has happened. Too much, and it will feel distracting or abrupt.
+          p 
+            strong Usage-based contrast: 
+            br
+            | Designers should be able to combine colors from opposite sides of the palette and easily meet contrast guidelines, even when those values aren't at the edge. For example, you should be able to come two steps down from the top and bottom, and still have colors that pass contrast when used for small text. This provides the flexibility to have text with multiple visual weights, as well as multiple UI levels such as wells or panels. Without this wiggle room, designs will start failing contrast as soon as there's any kind of complex UI nesting.
+          p 
+            strong Feel & consistency: 
+            br
+            | It's not enough to pass contrast. A pallete should be nice to look at. Each step should feel like part of the same family. Changes in hue and saturation should be gradual. This is less technical and more vibes-based, but vibes are important.
+
+          h3 How to Think About Dark Mode
+          p Hint: it's not by flipping light mode upside down.
+          p Many design teams add support for dark mode by inverting the order of the light mode they already have, but dark mode has different norms, and palettes should account for this. Two key differences are in saturation and backgrounds. Dark mode colors are typically less saturated, with the goal of being softer on the eyes and generally less intense. It's also common for dark mode backgrounds to stack in the opposite direction, so while light mode might put a <code>gray-200</code> panel over a <code>gray-100</code> background, dark mode might instead put <code>100</code> over <code>200</code>. This has implications for contrast, and which steps in a palette should be expected to pair well together.
+
+          h3 Stress Testing a Color System
+          p Colors may pass a check for both contrast and vibe, but that alone won't guarantee that they're successful. Palettes should be tested in the places they'll actually be used, across all kinds of UI patterns and application contexts. A well built Figma library comes in handy here, allowing you to preview interactivity and variation between components, and compose different UIs quickly. Things I look for:
           ul
-            li Shadowing the design team through key meetings, crits, and handoffs.
-            li Interviewing designers about how they use the design system, what's working, and what's not.
-            li Getting a dev env running and reviewing the codebase with engineers.
-            li Meeting with PM and legal to understand their perspectives.
-          //- h2 Results
-          p As I learned more, the design system's pain points began to fall into two categories:
-          .col-xs-8
-            h4 Technical
-            p Issues with content and functionality: absence, brokenness, or lack of parity.
-          .col-xs-8
-            h4 Experiential
-            p Issues with using the design system: uncertainty, difficulty, and process.
-          
-          h2 Technical
+            li Mid-palette performance in various button states. Is there enough flexibility to give a button both a background and a border, and then have both of those change across hover and down states? What if the text color is also from the same family (eg light blue, rather than white)?
+            li Hover states across menus and nested panels: can you launch a popover menu from within a well that sits atop the page background, and then hover over an element? Is there enough differentiation?
+            li Alert backgrounds. The most common place for things like light green or light red backgrounds. Do these feel good with various backgrounds, borders, and states?
+            li Text heirarchy. Mixing lighter and darker shades for heading, body, and detail text to create different visual weights. Things should feel good for both large, punchy display text and tiny, subtle image captions or legalese.
+          p This right things to check will be different for every org. Samsara, for example, places a higher-than-usual emphasis on data visualization and tabular interations.
+      .row.panel.panel--karmic-snapchat
+      .row
+        .default-text.default-text--round-bottom
+
+          h1 Repairing Core Components
+          p XX
